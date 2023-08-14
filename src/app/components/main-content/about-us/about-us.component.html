@@ -1,0 +1,11 @@
+<div class="about-us__section">
+  <h2 class="about-us__title">Чому саме MindLink?</h2>
+ 
+  <div class="about-us-card_section">
+    <div *ngFor="let card of cards" class="about-us-card">
+      <h4 class="about-us-card__title">{{ card.title }}</h4>
+      <p class="about-us-card__content">{{ card.content }}</p>
+    </div>
+  </div>
+  
+</div>

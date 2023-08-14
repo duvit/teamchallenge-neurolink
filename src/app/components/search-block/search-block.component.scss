@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.search-block {
+  margin: 100px auto 0;
+
+  .search-block__title {
+    @include primary-title;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 86px 0 0;
+    gap: 40px 15px;
+
+    .app-specialist-card{
+      width: 360px;
+    }
+  }
+
+  .search-block__button {
+    @include main-button;
+
+    display: block;
+    margin: 40px auto;
+  }
+}

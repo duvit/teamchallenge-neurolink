@@ -1,0 +1,47 @@
+@import "../../../../styles.scss";
+
+.categories {
+  margin: 140px auto 0;
+  max-width: 1600px;
+
+  .categories__title {
+    @include primary-title;
+  }
+
+  .categories__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 90px 80px 0;
+  }
+
+  .categories__item {
+    height: 180px;
+    width: calc(25% - 10px); /* Щоб було 4 елементи в ряду */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 50px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 180px 180px;
+
+    .categories__item__text {
+      width: calc(40% - 10px); /* Щоб було 4 елементи в ряду */
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.8px;
+    }
+  }
+}

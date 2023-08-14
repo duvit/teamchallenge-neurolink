@@ -1,0 +1,100 @@
+@import "../../../../styles.scss";
+
+.specialist-card {
+  width: 360px;
+  height: 402px;
+
+  border-radius: 10px;
+  border: 1px solid #8c8c94;
+  background: #f1f0f5;
+
+  .specialist-card__main {
+    display: flex;
+    gap: 10px;
+
+    margin: 20px;
+
+    .specialist-card__photo {
+      width: 149px;
+      height: 196px;
+    }
+
+    .specialist-card__info {
+      .specialist-card__name {
+        margin: 0;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .pecialist-card__practice {
+        color: $main-text-color;
+
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .specialist-card__price {
+        color: $main-text-color;
+
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .specialist-card__rating {
+      }
+
+      .specialist-card__location {
+        color: $main-text-color;
+
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+  }
+
+  .specialist-card__description {
+    margin: 20px;
+
+    color: $main-text-color;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.8px;
+  }
+
+  .specialist-card__link {
+    margin: 20px;
+
+    color: #6669a0;
+
+    font-family: $font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+
+  .specialist-card__conect-btn {
+    @include main-button;
+
+    display: block;
+    width: 220px;
+    margin: 28px auto 0;
+  }
+}

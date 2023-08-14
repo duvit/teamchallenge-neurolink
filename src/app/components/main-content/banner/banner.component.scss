@@ -1,0 +1,42 @@
+@import "../../../../styles.scss";
+
+.banner {
+  margin: 190px 0 0 80px;
+  position: relative;
+  z-index: 20;
+
+  .title {
+    color: $main-text-color;
+    font-family: $font;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.8px;
+  }
+
+  .desription {
+    color: $main-text-color;
+    font-family: $font;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.6px;
+  }
+
+  .moto {
+    color: $main-text-color;
+    font-family: $font;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .learn-more-btn {
+    @include main-button;
+    
+    width: 190px;
+  }
+}

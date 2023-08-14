@@ -1,0 +1,14 @@
+<div class="search-block">
+  <h4 class="search-block__title">Наші спеціалісти</h4>
+  <app-search-bar></app-search-bar>
+  <div class="cards-container">
+    <app-specialist-card
+      class="app-specialist-card"
+      *ngFor="let specialist of specialists"
+      [specialist]="specialist"
+    ></app-specialist-card>
+  </div>
+  <button class="search-block__button" type="button">
+    Перегдлянути більше
+  </button>
+</div>

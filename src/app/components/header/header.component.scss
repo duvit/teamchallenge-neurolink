@@ -1,0 +1,88 @@
+@import "../../../styles.scss";
+
+header {
+  background-color: $primary-color;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 80px;
+    cursor: pointer;
+
+    .header-logo-img {
+      width: 34px;
+      height: 34px;
+    }
+
+    .header-title {
+      color: $secondary-color;
+      font-family: $font;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-left: 14px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+
+  gap: 20px;
+  align-items: center;
+
+  .nav-link {
+    display: inline-block;
+    color: $secondary-color;
+    font-family: $font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+
+  .language-btn {
+    background-color: $primary-color;
+    border: none;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    svg {
+      margin-top: -1px;
+    }
+  }
+
+  .login-btn {
+    color: $secondary-color;
+    font-family: $font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    border: none;
+    margin: auto 0 auto 32px;
+    cursor: pointer;
+    .login-btn-icon {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

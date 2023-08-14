@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+
+.about-us__section {
+  margin: 330px auto 0;
+  width: 100%;
+
+  .about-us__title {
+    @include primary-title;
+  }
+
+  .about-us-card_section {
+    display: flex;
+
+    .about-us-card {
+      width: 330px;
+      margin: 100px auto;
+
+      .about-us-card__title {
+        @include secondary-title;
+        
+        padding: 5px 18px;
+      }
+
+      .about-us-card__content {
+        @include normal-text;
+      }
+    }
+  }
+}
