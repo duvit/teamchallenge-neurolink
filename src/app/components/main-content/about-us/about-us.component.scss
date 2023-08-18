@@ -1,28 +1,65 @@
 @import "../../../../styles.scss";
 
 .about-us__section {
-  margin: 330px auto 0;
-  width: 100%;
+  margin: 30px 43px 0;
+
+  @include desktop {
+    margin: 330px 43px 0;
+  }
 
   .about-us__title {
     @include primary-title;
+
+    margin: 40px auto 0;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    @include desktop {
+      @include primary-title;
+      margin: 40px auto 0;
+    }
   }
 
   .about-us-card_section {
     display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      margin: 100px auto 0;
+    }
 
     .about-us-card {
-      width: 330px;
-      margin: 100px auto;
+      margin: 20px auto 0;
+
+      @include desktop {
+        width: 330px;
+      }
 
       .about-us-card__title {
         @include secondary-title;
-        
-        padding: 5px 18px;
+
+        margin: 0 auto;
+
+        font-size: 16px;
+
+        @include desktop {
+          padding: 5px 18px;
+
+          font-size: 24px;
+        }
       }
 
       .about-us-card__content {
         @include normal-text;
+
+        text-align: justify;
+        font-size: 14px;
+
+        @include desktop {
+          font-size: 20px;
+        }
       }
     }
   }

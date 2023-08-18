@@ -1,69 +1,120 @@
 @import "../../../../styles.scss";
 
 .how-it-works__section {
-  margin: 125px 80px 0;
+  margin: 40px 80px 0;
+
+  @include desktop {
+    margin: 125px 0 0;
+  }
 
   .how-it-works__title {
     @include primary-title;
+
+    font-size: 18px;
+
+    @include desktop {
+      font-size: 24px;
+    }
   }
 
   .how-it-works-items {
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    margin: 80px auto 0;
+
+    @include desktop {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      // margin: 80px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Два стовпці */
+      gap: 20px; /* Відступи між елементами */
+    }
   }
 
   .how-it-works-item {
     display: flex;
-    position: relative;
-    align-items: center;
-    width: 510px;
+    margin: 40px auto 20px;
 
-    &:last-child {
-      flex-direction: row-reverse;
+    @include desktop {
+      // display: flex;
+      // position: relative;
+      // align-items: center;
+      // width: 510px;
+
+      display: flex;
+      justify-content: space-between; /* Вирівнювання від лівого та правого краю */
+      align-items: center;
+
+      &:last-child {
+        flex-direction: row-reverse;
+      }
     }
 
     .how-it-works-item__descriprion {
       display: flex;
       flex-direction: column;
-      width: 270px;
-      box-sizing: border-box;
+      align-items: center;
+
+      text-align: justify;
+      font-size: 14px;
+
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        width: 270px;
+        box-sizing: border-box;
+      }
 
       .how-it-works-item__title {
         @include secondary-title;
 
-        text-align: start;
-        width: 280px;
-        margin: 0;
+        margin: 0 auto 0;
+        font-size: 16px;
+
+        @include desktop {
+          font-size: 24px;
+          text-align: start;
+          width: 280px;
+          margin: 0;
+        }
       }
 
       .how-it-works-item__text {
-        @include normal-text;
+        @include desktop {
+          @include normal-text;
 
-        margin-top: 20px;
-        padding: 5px 18px 0 0;
+          margin-top: 20px;
+          padding: 5px 18px 0 0;
+        }
       }
     }
 
     .how-it-works-item__img {
-      width: 250px;
-      height: 250px;
+      display: none;
+      @include desktop {
+        display: block;
+        width: 250px;
+        height: 250px;
+      }
     }
   }
 }
 
 .how-it-works-items {
   .how-it-works-item-odd {
-    left: 50%;
+    @include desktop {
+      justify-content: end;
+    }
   }
 }
 
 .how-it-works-items {
   .how-it-works-item-even {
-    left: 0;
+    @include desktop {
+      justify-content: start;
+    }
   }
 }

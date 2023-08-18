@@ -2,20 +2,32 @@
 
 header {
   background-color: $primary-color;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  // width: 100%;
 
+  @include desktop {
+    // width: 100%;
+    justify-content: space-between;
+  }
   .header-logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 80px;
-    cursor: pointer;
+    margin: 12px 0 0 34px;
 
+    @include desktop {
+      // display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      margin-left: 80px;
+      cursor: pointer;
+    }
     .header-logo-img {
       width: 34px;
       height: 34px;
+
+      @include desktop {
+      }
     }
 
     .header-title {
@@ -26,63 +38,78 @@ header {
       font-weight: 500;
       line-height: normal;
       margin-left: 14px;
+      @include desktop {
+      }
     }
   }
 }
 
 .nav {
-  display: flex;
+  display: none;
 
-  gap: 20px;
-  align-items: center;
+  @include desktop {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
 
   .nav-link {
-    display: inline-block;
-    color: $secondary-color;
-    font-family: $font;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-    cursor: pointer;
+    @include desktop {
+      display: inline-block;
+      color: $secondary-color;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 }
 
 .login {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
+  display: none;
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
 
   .language-btn {
-    background-color: $primary-color;
-    border: none;
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
-    svg {
-      margin-top: -1px;
+    @include desktop {
+      background-color: $primary-color;
+      border: none;
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
+      svg {
+        margin-top: -1px;
+      }
     }
   }
 
   .login-btn {
-    color: $secondary-color;
-    font-family: $font;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    height: 24px;
-
-    display: flex;
-    align-items: center;
-    background-color: $primary-color;
-    border: none;
-    margin: auto 0 auto 32px;
-    cursor: pointer;
-    .login-btn-icon {
+    @include desktop {
+      color: $secondary-color;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
       height: 24px;
-      width: 24px;
+
+      display: flex;
+      align-items: center;
+      background-color: $primary-color;
+      border: none;
+      margin: auto 0 auto 32px;
+      cursor: pointer;
+      .login-btn-icon {
+        height: 24px;
+        width: 24px;
+      }
     }
   }
 }

@@ -2,112 +2,192 @@
 
 .footer {
   .footer__banner {
-    width: 100%;
-    margin: 120px auto 0;
+    margin: 0 22px auto;
 
+    @include desktop {
+      width: 100%;
+      margin: 120px auto 0;
+    }
     .footer__banner_title {
       @include primary-title;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      @include desktop {
+        @include primary-title;
+
+        font-size: 32px;
+      }
     }
 
     .footer__banner_details {
-      display: flex;
-      margin: 0 0 0 120px;
-      align-items: center;
-      justify-content: center;
+      margin: 0 22px 0;
+      @include desktop {
+        display: flex;
+        margin: 0 0 0 120px;
+        align-items: center;
+        justify-content: center;
+      }
 
       .footer__img-bckg {
-        background-image: url(../../../assets/Psycho/frontg.svg),
-          url(../../../assets/Psycho/backg.svg);
-        background-position: center right;
-        background-repeat: no-repeat;
-        width: 350px;
-        height: 350px;
+        @include desktop {
+          background-image: url(../../../assets/Psycho/frontg.svg),
+            url(../../../assets/Psycho/backg.svg);
+          background-position: center right;
+          background-repeat: no-repeat;
+          width: 350px;
+          height: 350px;
+        }
 
         .footer__img {
-          width: 210px;
-          height: 210px;
+          @include desktop {
+            width: 210px;
+            height: 210px;
+          }
         }
       }
     }
 
     .footer__description {
-      display: flex;
-      flex-direction: column;
-      width: 630px;
-      margin: 80px 0 0 45px;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        width: 630px;
+        margin: 80px 0 0 45px;
+      }
 
       .footer__heading {
-        @include secondary-title;
+        @include normal-text;
 
-        text-align: start;
-        margin: 0;
+        text-align: justify;
+
+        @include desktop {
+          text-align: start;
+          margin: 0;
+        }
       }
 
       .footer__text {
         @include normal-text;
 
-        margin: 20px 0 0 0;
+        text-align: justify;
+
+        @include desktop {
+          margin: 20px 0 0 0;
+        }
       }
     }
 
     .footer__btn {
       @include main-button;
 
+      display: block;
       width: 150px;
-      margin-top: 40px;
+      margin: 40px auto;
+
+      @include desktop {
+        @include main-button;
+
+        width: 150px;
+        margin-top: 40px;
+      }
     }
   }
 
   .footer-panel {
     box-sizing: border-box;
-    margin: 80px auto 0;
+    margin: 10px auto;
+    padding: 15px;
+
     background-image: url("../../../assets/footer-bckg.svg");
-    background-size: 100%;
+    background-size: 170%;
+    background-position: center;
     background-repeat: no-repeat;
 
+    @include desktop {
+      margin: 20px auto 0;
+      padding: 40px auto 0;
+      background-image: url("../../../assets/footer-bckg.svg");
+      background-size: 100vw;
+      background-repeat: no-repeat;
+    }
+
     .footer-panel__nav {
-      padding: 100px 100px 30px;
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
       align-items: baseline;
+
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding: 100px 100px 30px;
+      }
 
       .footer-panel__nav-col {
         display: flex;
         flex-direction: column;
         align-items: start;
 
+        &:last-child {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        @include desktop {
+          &:last-child {
+            flex-direction: column;
+            margin: 0;
+          }
+        }
+
         .footer-panel__nav_link {
           color: $secondary-color;
           font-family: $font;
-          font-size: 20px;
+          font-size: 12px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
           text-decoration: none;
 
-          padding: 10px;
+          padding: 5px;
           text-align: center;
+
+          @include desktop {
+            font-size: 20px;
+          }
         }
 
         .footer-panel__nav_email {
+          display: block;
+
           font-size: 14px;
           font-weight: 500;
+          margin-left: 110px;
+
+          @include desktop {
+            margin-left: 0;
+            font-weight: 400;
+          }
         }
       }
     }
 
     .footer-panel__copyright {
-      display: block;
-      width: 300px;
-      margin: 0 auto 0;
-      padding-bottom: 30px;
+      display: none;
 
-      color: $secondary-color;
-      font-family: $font;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+      @include desktop {
+        justify-content: center;
+        display: flex;
+        color: $secondary-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
     }
   }
 }

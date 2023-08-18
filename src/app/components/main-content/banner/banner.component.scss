@@ -1,42 +1,136 @@
 @import "../../../../styles.scss";
 
 .banner {
-  margin: 190px 0 0 80px;
   position: relative;
-  z-index: 20;
+  z-index: 1;
 
-  .title {
-    color: $main-text-color;
-    font-family: $font;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 4.8px;
+  @include desktop {
+    z-index: 1;
   }
 
-  .desription {
-    color: $main-text-color;
-    font-family: $font;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 1.6px;
-  }
+  .wrapper {
+    // position: relative;
+    display: flex;
+    justify-content: center;
 
-  .moto {
-    color: $main-text-color;
-    font-family: $font;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    margin: 40px auto 0;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .text {
+      // width: 100%;
+      display: inline-block;
+      padding: 0;
+
+      @include desktop {
+        width: 100%;
+        display: inline-block;
+        margin: 190px 0 0 80px;
+        padding: 0;
+
+        position: relative;
+        z-index: 20;
+      }
+
+      .title {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.8px;
+
+        @include desktop {
+          font-size: 48px;
+        }
+      }
+
+      .desription {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.6px;
+
+        width: 160px;
+
+        @include desktop {
+          width: 100%;
+          font-size: 32px;
+        }
+      }
+
+      .moto {
+        display: none;
+
+        @include desktop {
+          display: inline-block;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+
+    .girl-img {
+      // height: 200px;
+      // width: 200px;
+      // top: 40px;
+      // right: 40px;
+
+      background-image: url("../../../../assets/main_girl_spot.png");
+      background-size: 180px 180px;
+      background-repeat: no-repeat;
+      background-position: 20px 20px;
+
+      @include desktop {
+        // display: none;
+        height: 400px;
+        width: 400px;
+        top: 240px;
+        right: 80px;
+      }
+
+      .girl-img-spot {
+        height: 180px;
+        width: 180px;
+        // top: 40px;
+        // right: 66px;
+
+        @include desktop {
+          height: 400px;
+          width: 400px;
+          top: 240px;
+          right: 80px;
+
+          position: absolute;
+          background-image: url("../../../../assets/main_girl_spot.png");
+          background-size: 400px 400px;
+          background-repeat: no-repeat;
+          background-position: 40px 60px;
+        }
+      }
+    }
   }
 
   .learn-more-btn {
     @include main-button;
-    
+
+    display: block;
+    margin: 0 auto 0;
     width: 190px;
+
+    @include desktop {
+      margin: 40px 0 0 80px;
+    }
   }
 }

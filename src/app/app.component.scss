@@ -1,51 +1,24 @@
 @import "../styles.scss";
 
 .wrapper {
+  position: relative;
   background-color: $secondary-color;
   width: 100%;
   padding: 0;
   margin: 0;
 
-  .girl-img {
-    z-index: 0;
-
-    .girl-img-girl {
-      position: absolute;
-      right: 0;
-      top: 320px;
-      z-index: 2;
-      background-color: transparent;
-
-      background-image: url("../assets/undraw_appreciation_yq3e\ 1.png");
-      background-repeat: no-repeat;
-      height: 531px;
-      width: 461px;
-    }
-
-    .girl-img-spot {
-      position: absolute;
-      right: 40px;
-      top: 360px;
-      z-index: 1;
-      background-color: transparent;
-
-      background-image: url("../assets/Group\ 1.png");
-      background-repeat: no-repeat;
-      height: 531px;
-      width: 461px;
-    }
-  }
-
   .spot-img {
-    position: absolute;
-    left: 40;
-    top: 480px;
-    background-color: transparent;
-    z-index: 0;
+    @include desktop {
+      position: absolute;
+      left: 40;
+      top: 480px;
+      z-index: 0;
+      background-color: transparent;
 
-    background-image: url("../assets/spot.png");
-    background-repeat: no-repeat;
-    height: 531px;
-    width: 461px;
+      background-image: url("../assets/spot.png");
+      background-repeat: no-repeat;
+      height: 531px;
+      width: 461px;
+    }
   }
 }

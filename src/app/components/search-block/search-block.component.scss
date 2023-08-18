@@ -1,28 +1,47 @@
 @import "../../../styles.scss";
 
 .search-block {
-  margin: 100px auto 0;
+  @include desktop {
+    margin: 100px auto 0;
+  }
 
   .search-block__title {
     @include primary-title;
+
+    font-size: 18px;
+
+    @include desktop {
+      font-size: 32px;
+    }
   }
 
   .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 86px 0 0;
-    gap: 40px 15px;
-
-    .app-specialist-card{
-      width: 360px;
+    margin: 0 24px;
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 86px 0 0;
+      gap: 40px 15px;
+    }
+    .app-specialist-card {
+      @include desktop {
+        width: 360px;
+      }
     }
   }
 
   .search-block__button {
     @include main-button;
 
-    display: block;
-    margin: 40px auto;
+      display: block;
+      margin: 20px auto;
+      
+    @include desktop {
+      @include main-button;
+
+      display: block;
+      margin: 40px auto;
+    }
   }
 }

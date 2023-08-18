@@ -2,54 +2,114 @@
 
 .search-form {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 0 auto 0;
-  width: 100%;
-  
+  justify-content: space-between;
+  margin: 0 24px 0;
+
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto 0;
+    width: 100%;
+    min-width: 1024px;
+  }
+
   .search-form__block {
-    position: relative;
-    box-sizing: border-box;
+    @include desktop {
+      position: relative;
+      box-sizing: border-box;
+    }
 
     .search-icon {
-      height: 20px;
-      width: 20px;
-      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      width: 160px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid #8c8c94;
+      padding: 15px;
+
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
       background-color: transparent;
 
-      position: absolute;
-      top: 11px;
-      left: 20px;
+      @include desktop {
+        height: 20px;
+        width: 20px;
+        border: none;
+        background-color: transparent;
+
+        position: absolute;
+        top: 9px;
+        left: 10px;
+      }
+
+      .search-icon__btn-txt {
+        display: block;
+        margin-left: 25px;
+        align-items: center;
+
+        @include desktop {
+          display: none;
+        }
+      }
     }
 
     .search-form__filter {
-      @include seacrh-field;
+      display: none;
 
-      padding-left: 50px;
+      @include desktop {
+        @include seacrh-field;
+
+        display: block;
+        margin-left: 10px;
+        padding-left: 50px;
+      }
     }
 
     .search-form__search {
-      @include seacrh-field;
+      display: none;
 
-      padding-left: 50px;
+      @include desktop {
+        @include seacrh-field;
+
+        display: block;
+        margin-left: 10px;
+        padding-left: 50px;
+      }
     }
   }
 
   .search-form__sel {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+    
     .search-form__select {
-      @include seacrh-field;
-      @include filters-font;
+      @include desktop {
+        @include seacrh-field;
+        @include filters-font;
 
-      padding-left: 16px;
-      width: 360px;
+        padding-left: 16px;
+        width: 360px;
 
-      appearance: none;
-      -webkit-appearance: none;
+        appearance: none;
+        -webkit-appearance: none;
 
-      background-image: url("../../../../assets/icons/select-icn.svg");
-      background-repeat: no-repeat;
-      background-position: 95% 13px;
-      background-size: 22px 22px;
+        background-image: url("../../../../assets/icons/select-icn.svg");
+        background-repeat: no-repeat;
+        background-position: 95% 13px;
+        background-size: 22px 22px;
+      }
     }
   }
 }

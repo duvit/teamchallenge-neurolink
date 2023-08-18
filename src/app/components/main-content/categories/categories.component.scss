@@ -1,47 +1,88 @@
 @import "../../../../styles.scss";
 
 .categories {
-  margin: 140px auto 0;
-  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 40px 0;
+
+  @include desktop {
+    margin: 140px auto 0;
+    max-width: 1600px;
+
+    flex-direction: column;
+  }
 
   .categories__title {
-    @include primary-title;
+    @include desktop {
+      @include primary-title;
+
+      display: block;
+      // height: 20px;
+      margin: 0 auto 0;
+    }
   }
 
   .categories__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 100%;
 
-    margin: 90px 80px 0;
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 90px auto 0;
+
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   .categories__item {
-    height: 180px;
-    width: calc(25% - 10px); /* Щоб було 4 елементи в ряду */
+    height: 110px;
+    width: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 0 auto 50px;
+    margin: 0 0 14px;
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 180px 180px;
+    background-size: 100px 100px;
+
+    @include desktop {
+      height: 180px;
+      width: calc(25% - 10px); /* Щоб було 4 елементи в ряду */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto 50px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 180px 180px;
+    }
 
     .categories__item__text {
-      width: calc(40% - 10px); /* Щоб було 4 елементи в ряду */
-      padding: 10px;
-      box-sizing: border-box;
-      text-align: center;
+      @include desktop {
+        width: calc(40% - 10px); /* Щоб було 4 елементи в ряду */
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
 
-      color: $main-text-color;
-      font-family: $font;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 0.8px;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.8px;
+      }
     }
   }
 }
