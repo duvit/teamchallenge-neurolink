@@ -3,22 +3,21 @@
 .categories {
   display: flex;
   flex-wrap: wrap;
-
-  margin: 0 40px 0;
+  flex-direction: column;
+  margin: 0 24px 0;
 
   @include desktop {
     margin: 140px auto 0;
     max-width: 1600px;
-
-    flex-direction: column;
   }
 
   .categories__title {
+    margin: 40px auto 0;
+
     @include desktop {
       @include primary-title;
 
       display: block;
-      // height: 20px;
       margin: 0 auto 0;
     }
   }
@@ -27,54 +26,48 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 100%;
+    margin: 50px auto;
 
     @include desktop {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 90px auto 0;
+      // justify-content: center;
 
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      margin: 90px 20px 0;
     }
   }
 
   .categories__item {
-    height: 110px;
-    width: 110px;
+    height: 130px;
+    width: 130px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    margin: 0 0 14px;
+    margin: 0 auto 14px;
+    border-radius: 10px;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
+    background: #fff;
 
     @include desktop {
-      height: 180px;
-      width: calc(25% - 10px); /* Щоб було 4 елементи в ряду */
+      height: 260px;
+      width: 260px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: 0 auto 50px;
+      margin: 0 0 10px;
 
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 180px 180px;
+      padding: 20px;
     }
 
-    .categories__item__text {
-      @include desktop {
-        width: calc(40% - 10px); /* Щоб було 4 елементи в ряду */
-        padding: 10px;
-        box-sizing: border-box;
-        text-align: center;
+    .categories__item__title {
+      margin: 10px auto 0;
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
 
+      @include desktop {
         color: $main-text-color;
         font-family: $font;
         font-size: 16px;
@@ -82,6 +75,40 @@
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0.8px;
+
+        // margin: 20px auto 0;
+      }
+    }
+
+    .categories__item__img {
+      height: 43px;
+      width: 43px;
+      margin: auto;
+
+      @include desktop {
+        margin-top: 20px;
+      }
+    }
+
+    .categories__item__text {
+      display: none;
+
+      @include desktop {
+        display: block;
+        min-height: 65px;
+        margin-top: 20px;
+      }
+    }
+
+    .categories__item__more-btn {
+      margin-bottom: 10px;
+
+      border: none;
+      background-color: transparent;
+
+      @include desktop {
+        margin-left: auto;
+        margin-top: 30px;
       }
     }
   }

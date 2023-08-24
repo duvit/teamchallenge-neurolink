@@ -34,13 +34,10 @@
   .search-block__button {
     @include main-button;
 
-      display: block;
-      margin: 20px auto;
-      
-    @include desktop {
-      @include main-button;
+    display: block;
+    margin: 20px auto;
 
-      display: block;
+    @include desktop {
       margin: 40px auto;
     }
   }

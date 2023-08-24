@@ -3,25 +3,24 @@
 header {
   background-color: $primary-color;
   display: flex;
-  // width: 100%;
 
   @include desktop {
-    // width: 100%;
     justify-content: space-between;
   }
+
   .header-logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 12px 0 0 34px;
+    margin: 4px 19px 0;
+    // margin-left: 19px;
 
     @include desktop {
-      // display: flex;
       align-items: center;
-      // justify-content: space-between;
       margin-left: 80px;
       cursor: pointer;
     }
+
     .header-logo-img {
       width: 34px;
       height: 34px;

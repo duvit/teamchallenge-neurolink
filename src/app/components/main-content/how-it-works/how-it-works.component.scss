@@ -1,7 +1,81 @@
 @import "../../../../styles.scss";
 
+* {
+  box-sizing: border-box;
+}
+.row {
+  width: 1280px;
+}
+
+.even {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.odd {
+  display: flex;
+  flex-direction: row;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  @include desktop {
+    width: 60%;
+  }
+
+  .how-it-works-item {
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
 .how-it-works__section {
-  margin: 40px 80px 0;
+  margin: 40px 40px 0;
 
   @include desktop {
     margin: 125px 0 0;
@@ -20,17 +94,12 @@
   .how-it-works-items {
     justify-content: center;
     align-items: center;
-    width: 100%;
 
     @include desktop {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
-      // margin: 80px auto 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Два стовпці */
-      gap: 20px; /* Відступи між елементами */
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto 0;
+      align-items: center;
     }
   }
 
@@ -39,18 +108,10 @@
     margin: 40px auto 20px;
 
     @include desktop {
-      // display: flex;
-      // position: relative;
-      // align-items: center;
-      // width: 510px;
-
       display: flex;
-      justify-content: space-between; /* Вирівнювання від лівого та правого краю */
       align-items: center;
-
-      &:last-child {
-        flex-direction: row-reverse;
-      }
+      margin: 0;
+      width: 550px;
     }
 
     .how-it-works-item__descriprion {
@@ -77,8 +138,7 @@
         @include desktop {
           font-size: 24px;
           text-align: start;
-          width: 280px;
-          margin: 0;
+          margin-left: 0;
         }
       }
 
@@ -94,27 +154,23 @@
 
     .how-it-works-item__img {
       display: none;
+
       @include desktop {
-        display: block;
+        display: inline-block;
         width: 250px;
         height: 250px;
+        margin: -50px 10px 0;
       }
     }
   }
 }
 
-.how-it-works-items {
-  .how-it-works-item-odd {
-    @include desktop {
-      justify-content: end;
-    }
-  }
-}
+.ghost-div {
+  display: none;
 
-.how-it-works-items {
-  .how-it-works-item-even {
-    @include desktop {
-      justify-content: start;
-    }
+  @include desktop {
+    display: block;
+    height: 200px;
+    width: 500px;
   }
 }

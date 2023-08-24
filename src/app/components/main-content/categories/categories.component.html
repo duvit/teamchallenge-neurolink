@@ -2,13 +2,15 @@
   <h2 class="categories__title">З чим допомагає психолог?</h2>
   <div class="categories__container">
     <div
-      *ngFor="let category of categories; let i = index"
       class="categories__item"
-      [ngStyle]="{ 'background-image': bckgImgs[i] }"
+      *ngFor="let category of categories;"
     >
-      <p class="categories__item__text">
-        {{ category.text }}
+      <p class="categories__item__title">
+        {{ category.title }}
       </p>
+      <img class="categories__item__img" src="{{ category.img }}" alt="" />
+      <p class="categories__item__text">{{ category.description }}</p>
+      <button class="categories__item__more-btn" type="button"><img src="../../../../assets/icons/arrow-right.svg"></button>
     </div>
   </div>
 </div>

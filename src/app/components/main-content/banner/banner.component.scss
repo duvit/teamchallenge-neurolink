@@ -9,7 +9,6 @@
   }
 
   .wrapper {
-    // position: relative;
     display: flex;
     justify-content: center;
 
@@ -21,7 +20,6 @@
     }
 
     .text {
-      // width: 100%;
       display: inline-block;
       padding: 0;
 
@@ -93,11 +91,6 @@
       background-position: 20px 20px;
 
       @include desktop {
-        // display: none;
-        height: 400px;
-        width: 400px;
-        top: 240px;
-        right: 80px;
       }
 
       .girl-img-spot {
@@ -107,16 +100,16 @@
         // right: 66px;
 
         @include desktop {
-          height: 400px;
+          height: 300px;
           width: 400px;
           top: 240px;
           right: 80px;
 
           position: absolute;
           background-image: url("../../../../assets/main_girl_spot.png");
-          background-size: 400px 400px;
+          background-size: cover;
           background-repeat: no-repeat;
-          background-position: 40px 60px;
+          background-position: 50px;
         }
       }
     }

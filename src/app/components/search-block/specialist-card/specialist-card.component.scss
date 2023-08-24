@@ -55,13 +55,17 @@
       }
 
       .specialist-card__location {
-        color: $main-text-color;
+        display: none;
 
-        font-family: $font;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        @include desktop {
+          color: $main-text-color;
+
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
       }
     }
   }
@@ -79,8 +83,6 @@
   }
 
   .specialist-card__link {
-    margin: 20px;
-
     color: #6669a0;
 
     font-family: $font;
@@ -89,6 +91,11 @@
     font-weight: 500;
     line-height: normal;
     text-decoration-line: underline;
+    justify-content: end;
+
+    @include desktop {
+      margin: 20px;
+    }
   }
 
   .specialist-card__conect-btn {

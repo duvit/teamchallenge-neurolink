@@ -3,15 +3,20 @@
 
   <div class="how-it-works-items">
     <div
-      class="how-it-works-item"
-      *ngFor="let card of cards; let i = index"
+      class="row"
       [ngClass]="getClasses(i)"
+      *ngFor="let card of cards; let i = index"
     >
-      <div class="how-it-works-item__descriprion">
-        <h4 class="how-it-works-item__title">{{ card.title }}</h4>
-        <p class="how-it-works-item__text">{{ card.content }}</p>
+      <div class="col-6">
+        <div class="how-it-works-item">
+          <div class="how-it-works-item__descriprion">
+            <h4 class="how-it-works-item__title">{{ card.title }}</h4>
+            <p class="how-it-works-item__text">{{ card.content }}</p>
+          </div>
+          <img class="how-it-works-item__img" src="{{ card.img }}" alt="#" />
+        </div>
       </div>
-      <img class="how-it-works-item__img" [src]="cardsImgs[i]" alt="#" />
+      <div class="col-6 ghost-div"></div>
     </div>
   </div>
 </div>
