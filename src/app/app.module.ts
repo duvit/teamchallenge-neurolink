@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,9 @@ import { HowItWorksComponent } from './components/main-content/how-it-works/how-
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchBarComponent } from './components/search-block/search-bar/search-bar.component';
 import { SpecialistCardComponent } from './components/search-block/specialist-card/specialist-card.component';
+import { MainContentWrapperComponent } from './components/main-content-wrapper/main-content-wrapper.component';
+import { RegistrationComponent } from './components/header/registration/registration.component';
+import { LoginComponent } from './components/header/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +32,11 @@ import { SpecialistCardComponent } from './components/search-block/specialist-ca
     FooterComponent,
     SearchBarComponent,
     SpecialistCardComponent,
+    MainContentWrapperComponent,
+    RegistrationComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

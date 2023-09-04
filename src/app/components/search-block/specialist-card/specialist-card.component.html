@@ -7,16 +7,19 @@
     />
     <div class="specialist-card__info">
       <h4 class="specialist-card__name">{{ specialist.name }}</h4>
-      <p class="specialist-card__practice">{{ specialist.practice }} років практики</p>
-      <p class="specialist-card__price">{{ specialist.price }} грн/год</p>
+      <p>{{ specialist.id }}</p>
+      <!-- <p class="specialist-card__practice">{{ specialist.practice }} років практики</p> -->
+      <!-- <p class="specialist-card__price">{{ specialist.price }} грн/год</p> -->
       <div class="specialist-card__rating">R A T I N G</div>
-      <p class="specialist-card__location">{{ specialist.location }}</p>
+      <!-- <p class="specialist-card__location">{{ specialist.location }}</p> -->
     </div>
   </div>
 
-  <div class="specialist-card__description">
+  <!-- <div class="specialist-card__description">
     <span *ngFor="let category of specialist.categories">{{ category }}, </span>
-  </div>
+  </div> -->
   <a class="specialist-card__link" href="">Переглянути профіль</a>
-  <button class="specialist-card__conect-btn" type="button">Записатися на прийом</button>
+  <button class="specialist-card__conect-btn" type="button">
+    Записатися на прийом
+  </button>
 </div>

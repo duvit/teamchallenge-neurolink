@@ -3,8 +3,9 @@
   <app-search-bar></app-search-bar>
   <div class="cards-container">
     <app-specialist-card
+      
       class="app-specialist-card"
-      *ngFor="let specialist of specialists"
+      *ngFor="let specialist of usersList"
       [specialist]="specialist"
     ></app-specialist-card>
   </div>

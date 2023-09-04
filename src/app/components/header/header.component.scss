@@ -2,18 +2,23 @@
 
 header {
   background-color: $primary-color;
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    "logo login navbar_btn"
+    "navbar . .";
+  justify-content: space-between;
 
   @include desktop {
-    justify-content: space-between;
+    display: flex;
+    height: 60px;
   }
 
   .header-logo {
     display: flex;
+    height: 60px;
     align-items: center;
-    justify-content: space-between;
-    margin: 4px 19px 0;
-    // margin-left: 19px;
+    margin: 0 19px;
+    grid-area: logo;
 
     @include desktop {
       align-items: center;
@@ -41,73 +46,160 @@ header {
       }
     }
   }
-}
 
-.nav {
-  display: none;
-
-  @include desktop {
+  .navbar {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
     align-items: center;
-  }
 
-  .nav-link {
-    @include desktop {
-      display: inline-block;
-      color: $secondary-color;
-      font-family: $font;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  }
-}
+    overflow: hidden;
+    position: relative;
 
-.login {
-  display: none;
+    grid-area: navbar;
 
-  @include desktop {
-    display: flex;
-    align-items: center;
-    margin-right: 30px;
-  }
+    .nav {
+      display: none;
+      flex-direction: column;
+      height: 100vh;
 
-  .language-btn {
-    @include desktop {
-      background-color: $primary-color;
-      border: none;
-      height: 24px;
-      width: 24px;
-      cursor: pointer;
-      svg {
-        margin-top: -1px;
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        height: 60px;
+      }
+
+      .nav-link {
+        display: block;
+
+        color: $secondary-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        cursor: pointer;
+
+        @include desktop {
+        }
       }
     }
   }
 
-  .login-btn {
-    @include desktop {
-      color: $secondary-color;
-      font-family: $font;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      height: 24px;
+  .login {
+    grid-area: login;
+    display: flex;
+    align-items: center;
 
-      display: flex;
-      align-items: center;
-      background-color: $primary-color;
-      border: none;
-      margin: auto 0 auto 32px;
-      cursor: pointer;
-      .login-btn-icon {
+    @include desktop {
+      margin-right: 30px;
+    }
+
+    .language-btn {
+      display: none;
+
+      @include desktop {
+        display: block;
+
+        background-color: $primary-color;
+        border: none;
         height: 24px;
         width: 24px;
+        cursor: pointer;
+        svg {
+          margin-top: -1px;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      width: 15px;
+      margin-right: 40px;
+
+      @include desktop {
+        width: 100%;
+        margin: 0;
+      }
+
+      .login-btn {
+        display: none;
+
+        background-color: $primary-color;
+        border: none;
+        margin: 0 20px 0 32px;
+        cursor: pointer;
+
+        @include desktop {
+          display: flex;
+          align-items: center;
+          color: $secondary-color;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        span {
+          display: none;
+
+          @include desktop {
+            display: block;
+            margin-right: 10px;
+          }
+        }
+
+        .login-btn-icon {
+          margin-top: 10px;
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  .mobile-navbar_btn {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+    background-color: transparent;
+    border: none;
+
+    grid-area: navbar_btn;
+
+    @include desktop {
+      display: none;
+    }
+
+    .mobile-navbar__dash {
+      display: block;
+      height: 2px;
+      width: 30px;
+      background-color: #fff;
+      margin-bottom: 4px;
+      transition: transform 0.3s;
+
+      &.is-open:nth-child(1) {
+        transform: rotate(-45deg) translate(0, 13px);
+      }
+
+      &.is-open:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.is-open:nth-child(3) {
+        opacity: 0;
+      }
+
+      &.is-open:nth-child(4) {
+        transform: rotate(45deg) translate(0, -13px);
       }
     }
   }

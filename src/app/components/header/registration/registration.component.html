@@ -1,0 +1,57 @@
+<div class="registration__wrapper">
+  <h4 class="registration__title">Реєстрація</h4>
+  <h5>
+    <p>Вже є обліковий запис?</p>
+    <button routerLink="/login">Увійти</button>
+  </h5>
+
+  <form
+    class="registration__form"
+    [formGroup]="registrationForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="registration__form-group">
+      <label for="email">E-mail / Телефон*</label>
+      <input type="text" id="email" formControlName="email" />
+    </div>
+
+    <div class="registration__form-group">
+      <label for="username">Ім'я*</label>
+      <input type="text" id="username" formControlName="username" />
+    </div>
+
+    <div class="registration__form-group">
+      <label for="userSurname">Прізвище</label>
+      <input type="text" id="userSurname" formControlName="userSurname" />
+    </div>
+
+    <div class="registration__form-group">
+      <label for="userBirthDate">Дата народження</label>
+      <input type="text" id="userBirthDate" formControlName="userBirthDate" />
+    </div>
+
+    <div class="registration__form-group">
+      <label for="password">Пароль</label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+
+    <div class="registration__form-group">
+      <label for="passwordRepeat">Повторити пароль</label>
+      <input
+        type="password"
+        id="passwordRepeat"
+        formControlName="passwordRepeat"
+      />
+    </div>
+
+    <div>
+      <label for="agreement"
+        >Створюючи обліковий запис, я погоджуюся з Умовами користування
+        сайтом</label
+      >
+      <input type="checkbox" id="agreement" />
+    </div>
+
+    <button type="submit">Створити акаунт</button>
+  </form>
+</div>

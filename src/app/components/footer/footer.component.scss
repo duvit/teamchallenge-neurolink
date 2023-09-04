@@ -100,14 +100,10 @@
     margin: 10px auto;
     padding: 15px;
 
-    background-image: url("../../../assets/footer-bckg.svg");
-    background-size: 170%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: $primary-color;
 
     @include desktop {
-      margin: 20px auto 0;
-      padding: 40px auto 0;
+      margin: 170px auto 0;
       background-image: url("../../../assets/footer-bckg.svg");
       background-size: 100vw;
       background-repeat: no-repeat;
@@ -116,13 +112,13 @@
     .footer-panel__nav {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      align-items: baseline;
 
       @include desktop {
         display: flex;
         flex-direction: row;
-        padding: 100px 100px 30px;
+        justify-content: space-around;
+        align-items: baseline;
+        padding: 80px 100px 0;
       }
 
       .footer-panel__nav-col {
@@ -140,6 +136,7 @@
           &:last-child {
             flex-direction: column;
             margin: 0;
+            align-items: start;
           }
         }
 
@@ -165,7 +162,6 @@
 
           font-size: 14px;
           font-weight: 500;
-          margin-left: 110px;
 
           @include desktop {
             margin-left: 0;
@@ -176,17 +172,16 @@
     }
 
     .footer-panel__copyright {
-      display: none;
+      justify-content: center;
+      display: flex;
+      color: $secondary-color;
+      font-family: $font;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
 
       @include desktop {
-        justify-content: center;
-        display: flex;
-        color: $secondary-color;
-        font-family: $font;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
       }
     }
   }

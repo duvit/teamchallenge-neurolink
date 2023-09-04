@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-search-block',
@@ -6,54 +9,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-block.component.scss'],
 })
 export class SearchBlockComponent {
-  specialists = [
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-    {
-      name: 'Ольга Іванова',
-      practice: 7,
-      price: 1500,
-      rate: 4,
-      location: 'Київ, Україна',
-      categories: ['гештальт - терапевт', 'арт-психолог', 'дитячий психолог'],
-    },
-  ];
+  usersList: any[] = [];
+
+  private usersListSubscription: Subscription | undefined;
+
+  constructor(private userSerivce: UserService) {}
+
+  ngOnInit(): void {
+    this.usersListSubscription = this.userSerivce.getUsers().subscribe(
+      (response: any[]) => {
+        this.usersList = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.usersListSubscription) {
+      this.usersListSubscription.unsubscribe();
+    }
+  }
 }
