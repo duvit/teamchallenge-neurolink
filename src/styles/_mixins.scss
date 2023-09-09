@@ -65,3 +65,21 @@
     @include filters-font;
   }
 }
+
+@mixin account-input-field {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #8c8c94;
+  padding: 10px;
+  box-sizing: border-box;
+
+  color: #c9c9c9;
+  font-family: $font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

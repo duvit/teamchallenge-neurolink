@@ -19,6 +19,7 @@ header {
     align-items: center;
     margin: 0 19px;
     grid-area: logo;
+    text-decoration: none;
 
     @include desktop {
       align-items: center;
@@ -118,6 +119,7 @@ header {
       display: block;
       width: 15px;
       margin-right: 40px;
+      text-decoration: none;
 
       @include desktop {
         width: 100%;
@@ -153,7 +155,6 @@ header {
         }
 
         .login-btn-icon {
-          margin-top: 10px;
           height: 24px;
           width: 24px;
         }

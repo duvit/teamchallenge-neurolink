@@ -1,0 +1,162 @@
+@import "../../../../styles.scss";
+
+.login {
+  height: 100vh;
+  background-color: #fff;
+  padding: 40px;
+
+  @include desktop {
+    width: 930px;
+    height: 475px;
+    margin: 120px auto 0;
+
+    box-sizing: border-box;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+
+    @include desktop {
+      display: block;
+      margin: 20px auto 0;
+    }
+  }
+
+  .registration-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 360px;
+      margin: 5px auto 0;
+    }
+
+    p {
+      display: inline;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    a {
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .login__form {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      align-items: center;
+    }
+
+    .login__group__email {
+      label {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      input {
+        @include account-input-field;
+        width: 100%;
+
+        @include desktop {
+          width: 360px;
+        }
+      }
+    }
+
+    .login__group__password {
+      margin-top: 20px;
+
+      .login__password {
+        display: flex;
+        justify-content: space-between;
+
+        label {
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        a {
+          cursor: pointer;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      input {
+        @include account-input-field;
+
+        @include desktop {
+          width: 360px;
+        }
+      }
+    }
+
+    .remember-user-block {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+
+      @include desktop {
+        margin: 20px auto 0 260px;
+      }
+
+      .remember-user-check {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        border-radius: 4px;
+        border: 1px solid #8c8c94;
+      }
+
+      .remember-user-label {
+        margin-left: 12px;
+
+        color: #343241;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    .login__form-btn {
+      @include main-button;
+
+      width: 86px;
+      margin: 40px auto;
+    }
+  }
+}

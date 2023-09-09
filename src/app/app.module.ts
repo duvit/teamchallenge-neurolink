@@ -18,6 +18,7 @@ import { SpecialistCardComponent } from './components/search-block/specialist-ca
 import { MainContentWrapperComponent } from './components/main-content-wrapper/main-content-wrapper.component';
 import { RegistrationComponent } from './components/header/registration/registration.component';
 import { LoginComponent } from './components/header/login/login.component';
+import { UserAgreementComponent } from './user-agreement/user-agreement.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './components/header/login/login.component';
     MainContentWrapperComponent,
     RegistrationComponent,
     LoginComponent,
+    UserAgreementComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],

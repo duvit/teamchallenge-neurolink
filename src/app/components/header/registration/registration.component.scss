@@ -1,0 +1,136 @@
+@import "../../../../styles.scss";
+
+.registration {
+  height: 100vh;
+  padding: 28px 40px 40px;
+  background-color: #fff;
+
+  @include desktop {
+    width: 930px;
+    height: 475px;
+    margin: 120px auto 0;
+
+    box-sizing: border-box;
+  }
+
+  &__title {
+    display: block;
+    margin: 0 auto 0;
+    font-family: $font;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .login-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 32px;
+    margin: 0 auto 0;
+
+    p {
+      display: inline;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    a {
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .registration__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .form-wrapper {
+      @include desktop {
+        margin: 20px 20px 0;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+
+    label {
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    input {
+      @include account-input-field;
+      margin: 2px 0 8px 0;
+
+      @include desktop {
+        width: 360px;
+      }
+    }
+  }
+
+  .user-agreement {
+    display: flex;
+    height: 24px;
+    align-items: center;
+    margin: 20px auto 0;
+
+    .user-agreement-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid #8c8c94;
+      margin: 0;
+    }
+
+    .user-agreement-label {
+      margin-left: 12px;
+      width: 100%;
+      color: #343241;
+      font-family: $font;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      a {
+        color: #3e2d5f;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 00;
+        line-height: normal;
+        text-decoration-line: underline;
+
+        @include desktop {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .registration__form-btn {
+    @include main-button;
+    width: 180px;
+    margin: 12px auto;
+
+    @include desktop {
+      width: 180px;
+      margin: 36px auto;
+    }
+  }
+}

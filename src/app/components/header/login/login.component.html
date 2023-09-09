@@ -1,26 +1,41 @@
-<div class="login__wrapper">
+<div class="login">
   <h4 class="login__title">Увійти</h4>
-  <h5>
+  <h5 class="registration-link">
     <p>У вас немає облікового запису?</p>
-    <button routerLink="/registration">Зареєструватися</button>
+    <a routerLink="/registration">Зареєструватися</a>
   </h5>
 
   <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="login__form-group">
+    <div class="login__group__email">
       <label for="email">E-mail / Телефон*</label>
-      <input type="text" id="email" formControlName="email" />
+      <input
+        type="text"
+        id="email"
+        formControlName="email"
+        placeholder="Введіть Ваш Email або Телефон"
+      />
     </div>
 
-    <div class="login__form-group">
-      <label for="password">Пароль</label>
-      <input type="password" id="password" formControlName="password" />
+    <div class="login__group__password">
+      <div class="login__password">
+        <label for="password">Пароль</label>
+        <a>Забули пароль?</a>
+      </div>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Введіть Ваш пароль"
+      />
     </div>
 
-    <div>
-      <label for="rememberUser">Запамʼятати мене</label>
-      <input type="checkbox" id="rememberUser" />
+    <div class="remember-user-block">
+      <input class="remember-user-check" type="checkbox" id="rememberUser" />
+      <label class="remember-user-label" for="rememberUser"
+        >Запамʼятати мене</label
+      >
     </div>
 
-    <button type="submit">Увійти</button>
+    <button class="login__form-btn" type="submit">Увійти</button>
   </form>
 </div>
