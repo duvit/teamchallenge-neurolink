@@ -18,7 +18,9 @@ import { SpecialistCardComponent } from './components/search-block/specialist-ca
 import { MainContentWrapperComponent } from './components/main-content-wrapper/main-content-wrapper.component';
 import { RegistrationComponent } from './components/header/registration/registration.component';
 import { LoginComponent } from './components/header/login/login.component';
-import { UserAgreementComponent } from './user-agreement/user-agreement.component';
+import { UserAgreementComponent } from './components/technical-department/user-agreement/user-agreement.component';
+import { PageNotFoundComponent } from './components/technical-department/page-not-found/page-not-found.component';
+import { SpecialistPageComponent } from './components/search-block/specialist-page/specialist-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { UserAgreementComponent } from './user-agreement/user-agreement.componen
     RegistrationComponent,
     LoginComponent,
     UserAgreementComponent,
+    PageNotFoundComponent,
+    SpecialistPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],

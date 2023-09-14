@@ -6,15 +6,17 @@
   margin: 0 24px 0;
 
   @include desktop {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    margin: 0 80px 0;
+    display: grid;
+    grid-template-columns:  1fr 2fr 1fr;
+    justify-content: center;
+    gap: 80px;
+
   }
 
   .search-form__block {
     @include desktop {
       position: relative;
+      width: 100%;
       box-sizing: border-box;
     }
 
@@ -68,7 +70,8 @@
         @include seacrh-field;
 
         display: block;
-        margin-left: 5px;
+        max-width: 360px;
+        margin-right: 0;
         padding-left: 50px;
       }
     }
@@ -79,6 +82,7 @@
       @include desktop {
         @include seacrh-field;
 
+        min-width: 330px;
         display: block;
         margin-left: 5px;
         padding-left: 50px;
@@ -91,6 +95,7 @@
 
     @include desktop {
       display: block;
+      max-width: 360px;
     }
 
     .search-form__select {
@@ -98,7 +103,8 @@
         @include seacrh-field;
         @include filters-font;
 
-        min-width: 270px;
+        max-width: 360px;
+
         padding-left: 16px;
 
         appearance: none;

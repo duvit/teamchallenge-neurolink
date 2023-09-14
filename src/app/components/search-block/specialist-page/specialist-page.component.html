@@ -1,0 +1,52 @@
+<div class="specialist">
+  <h2 class="specialist__name">
+    {{ specialist.name }} {{ specialist.surName }}
+  </h2>
+
+  <div class="specialist__profile">
+    <img
+      class="specialist__photo"
+      src="{{ specialist.photoLink }}"
+      alt="Photo"
+    />
+
+    <div class="specialist__info">
+      <div class="specialist__categories">
+        <span *ngFor="let category of specialist.categories"
+          >{{ category }},
+        </span>
+      </div>
+
+      <p class="specialist__practice">
+        {{ specialist.experience }} років практики
+      </p>
+
+      <p class="specialist__location">{{ specialist.location }}</p>
+
+      <p class="specialist__price">{{ specialist.price }} грн/год</p>
+    </div>
+  </div>
+
+  <div class="specialist__about">
+    <h4 class="specialist__about-title">Про себе</h4>
+    <p>
+      Вітаю! Я сертифікований психолог та гештальт-терапевт. В психології більше
+      7 років. Я рада постійному розвитку та навчанню який є на моєму
+      професійному та життєвому шляху. Це допомагає краще відчувати потреби
+      людей які звертаються до мене та разом з ними долати виклики які дає нам
+      життя. До мене звертаються з такими запитами як дитячі травми, пошук себе,
+      комунікація з іншими, відчуття своєї самоцінності і т.д. Не бійтеся
+      відкритися своїм відчуттям та думкам. Зробіть один маленький крок
+      назустріч собі та відчуйте безмежний потенціал у цьому світі.
+    </p>
+  </div>
+
+  <div class="specialist__areas">
+    <h4 class="specialist__areas-title">З якими напрямками я працюю</h4>
+    <span></span>
+  </div>
+
+  <div class="specialist__reception">
+    <h4 class="specialist__reception-title">Запис</h4>
+  </div>
+</div>

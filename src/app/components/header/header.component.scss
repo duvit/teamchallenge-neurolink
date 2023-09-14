@@ -1,12 +1,13 @@
 @import "../../../styles.scss";
 
-header {
+.header {
   background-color: $primary-color;
   display: grid;
   grid-template-areas:
     "logo login navbar_btn"
     "navbar . .";
   justify-content: space-between;
+  position: relative;
 
   @include desktop {
     display: flex;
@@ -17,7 +18,7 @@ header {
     display: flex;
     height: 60px;
     align-items: center;
-    margin: 0 19px;
+    margin: 0 28px;
     grid-area: logo;
     text-decoration: none;
 
@@ -58,13 +59,12 @@ header {
 
     grid-area: navbar;
 
-    .nav {
+    .nav-desktop {
       display: none;
-      flex-direction: column;
-      height: 100vh;
 
       @include desktop {
         display: flex;
+
         flex-direction: row;
         gap: 20px;
         align-items: center;
@@ -87,12 +87,39 @@ header {
         }
       }
     }
+
+    .nav-mobile {
+      display: none;
+      height: 100vh;
+      flex-direction: column;
+      padding: 0 34px;
+
+      @include desktop {
+        display: none;
+      }
+
+      .nav-link {
+        display: block;
+        margin-top: 28px;
+        color: $secondary-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        cursor: pointer;
+
+        @include desktop {
+        }
+      }
+    }
   }
 
   .login {
-    grid-area: login;
     display: flex;
     align-items: center;
+    grid-area: login;
 
     @include desktop {
       margin-right: 30px;
@@ -103,7 +130,7 @@ header {
 
       @include desktop {
         display: block;
-
+        margin-right: 30px;
         background-color: $primary-color;
         border: none;
         height: 24px;
@@ -129,9 +156,10 @@ header {
       .login-btn {
         display: none;
 
+        margin-right: 62px;
         background-color: $primary-color;
         border: none;
-        margin: 0 20px 0 32px;
+        margin: 0;
         cursor: pointer;
 
         @include desktop {
@@ -155,8 +183,8 @@ header {
         }
 
         .login-btn-icon {
-          height: 24px;
-          width: 24px;
+          width: 28px;
+          height: 28px;
         }
       }
     }

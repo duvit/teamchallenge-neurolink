@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
 import { UserService } from 'src/app/services/user.service';
+import { Specialist } from 'src/app/shared/types';
 
 @Component({
   selector: 'app-search-block',
@@ -9,26 +11,34 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./search-block.component.scss'],
 })
 export class SearchBlockComponent {
-  usersList: any[] = [];
+  specialistsList!: Specialist[];
 
-  private usersListSubscription: Subscription | undefined;
-
-  constructor(private userSerivce: UserService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.usersListSubscription = this.userSerivce.getUsers().subscribe(
-      (response: any[]) => {
-        this.usersList = response;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    this.specialistsList = this.userService.getMockSpecialists();
   }
 
-  ngOnDestroy(): void {
-    if (this.usersListSubscription) {
-      this.usersListSubscription.unsubscribe();
-    }
-  }
+  // usersList: any[] = [];
+
+  // private usersListSubscription: Subscription | undefined;
+
+  // constructor(private userSerivce: UserService) {}
+
+  // ngOnInit(): void {
+  //   this.usersListSubscription = this.userSerivce.getUsers().subscribe(
+  //     (response: any[]) => {
+  //       this.usersList = response;
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
+
+  // ngOnDestroy(): void {
+  //   if (this.usersListSubscription) {
+  //     this.usersListSubscription.unsubscribe();
+  //   }
+  // }
 }

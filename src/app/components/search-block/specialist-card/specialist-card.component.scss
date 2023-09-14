@@ -16,8 +16,8 @@
     margin: 20px;
 
     .specialist-card__photo {
-      width: 149px;
-      height: 196px;
+      width: 150px;
+      height: 200px;
     }
 
     .specialist-card__info {
@@ -59,7 +59,7 @@
 
         @include desktop {
           color: $main-text-color;
-
+          display: block;
           font-family: $font;
           font-size: 14px;
           font-style: normal;
