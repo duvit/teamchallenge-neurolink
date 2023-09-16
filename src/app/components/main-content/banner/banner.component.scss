@@ -3,34 +3,29 @@
 .banner {
   position: relative;
   z-index: 1;
+  margin: 40px 24px 0;
 
   @include desktop {
     position: relative;
     z-index: 1;
+    @include adaptive-value("margin-left", 80, 20);
+    // @include adaptive-value("margin-right", 80, 20);
   }
 
   .wrapper {
     display: flex;
     justify-content: center;
 
-    margin: 40px auto 0;
-
     @include desktop {
       display: flex;
       justify-content: space-between;
+      @include adaptive-value("margin-top", 190, 72);
     }
 
     .text {
-      display: inline-block;
-      padding: 0;
-
       @include desktop {
-        width: 100%;
-        display: inline-block;
-        margin: 190px 0 0 80px;
-        padding: 0;
-
         position: relative;
+        height: 220px;
         z-index: 20;
       }
 
@@ -44,7 +39,7 @@
         letter-spacing: 0.8px;
 
         @include desktop {
-          font-size: 48px;
+          @include adaptive-value("font-size", 48, 32);
         }
       }
 
@@ -58,10 +53,14 @@
         letter-spacing: 1.6px;
 
         width: 160px;
+   
 
         @include desktop {
           width: 100%;
-          font-size: 32px;
+          // height: 100%;
+          // margin: 40px auto 0;
+          @include adaptive-value("margin-top", 20, 8);
+          @include adaptive-value("font-size", 32, 24);
         }
       }
 
@@ -72,7 +71,9 @@
           display: inline-block;
           color: $main-text-color;
           font-family: $font;
-          font-size: 24px;
+          white-space: nowrap;
+          @include adaptive-value("margin-top", 40, 8);
+          @include adaptive-value("font-size", 24, 16);
           font-style: normal;
           font-weight: 500;
           line-height: normal;
@@ -81,58 +82,38 @@
     }
 
     .girl-img {
-      background-image: url("../../../../assets/main_girl_spot.png");
-      background-size: 180px 180px;
-      background-repeat: no-repeat;
-      background-position: 20px 20px;
+      position: relative;
 
       @include desktop {
+        position: absolute;
+        right: 0;
+        @include adaptive-value("margin-top", 100, 10);
       }
 
       .girl-img-spot {
-        height: 140px;
-        width: 180px;
+        width: 200px;
+        height: 200px;
 
         @include desktop {
-          height: 300px;
-          width: 400px;
-          top: 240px;
-          right: 80px;
-
-          position: absolute;
-          background-image: url("../../../../assets/main_girl_spot.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: 50px;
+          @include adaptive-value("width", 450, 350);
+          @include adaptive-value("height", 450, 350);
         }
-      }
-    }
-
-    .spot-img {
-      @include desktop {
-        position: absolute;
-        left: 40;
-        top: 480px;
-        z-index: -1;
-        background-color: transparent;
-
-        background-image: url("../../../../assets/spot.png");
-        background-repeat: no-repeat;
-        height: 531px;
-        width: 461px;
       }
     }
   }
 
   .learn-more-btn {
     @include main-button;
-
-    display: block;
-    margin: 0 auto 0;
+    position: relative;
+    top: 60px;
+    left: 50%;
     width: 190px;
+    z-index: 10;
 
     @include desktop {
-      margin: 40px 0 0 80px;
+      display: block;
+      position: static;
+      @include adaptive-value("margin-top", 48, 18);
     }
   }
 }

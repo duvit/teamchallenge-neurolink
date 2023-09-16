@@ -1,0 +1,95 @@
+@import "../../../../styles.scss";
+
+.footer__banner {
+  margin: 0 22px auto;
+
+  @include desktop {
+    width: 100%;
+    margin: 120px auto 0;
+  }
+  .footer__banner_title {
+    @include primary-title;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    @include desktop {
+      @include primary-title;
+
+      font-size: 32px;
+    }
+  }
+
+  .footer__banner_details {
+    margin: 0 22px 0;
+    @include desktop {
+      display: flex;
+      margin: 0 0 0 120px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer__img-bckg {
+      @include desktop {
+        background-image: url(../../../../assets/Psycho/frontg.svg),
+          url(../../../../assets/Psycho/backg.svg);
+        background-position: center right;
+        background-repeat: no-repeat;
+        width: 350px;
+        height: 350px;
+      }
+
+      .footer__img {
+        @include desktop {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    }
+  }
+
+  .footer__description {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      width: 630px;
+      margin: 80px 0 0 45px;
+    }
+
+    .footer__heading {
+      @include normal-text;
+
+      text-align: justify;
+
+      @include desktop {
+        text-align: start;
+        margin: 0;
+      }
+    }
+
+    .footer__text {
+      @include normal-text;
+
+      text-align: justify;
+
+      @include desktop {
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+
+  .footer__btn {
+    @include main-button;
+
+    display: block;
+    width: 150px;
+    margin: 40px auto;
+
+    @include desktop {
+      @include main-button;
+
+      width: 150px;
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,188 +1,92 @@
 @import "../../../styles.scss";
 
-.footer {
-  .footer__banner {
-    margin: 0 22px auto;
+.footer-panel {
+  box-sizing: border-box;
+  margin: 10px auto;
+  padding-bottom: 15px;
+
+  background-color: $primary-color;
+
+  @include desktop {
+    margin: 170px auto 0;
+    background-image: url("../../../assets/footer-bckg.svg");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+  }
+
+  .footer-panel__nav {
+    display: flex;
+    flex-direction: column;
 
     @include desktop {
-      width: 100%;
-      margin: 120px auto 0;
-    }
-    .footer__banner_title {
-      @include primary-title;
-
-      font-size: 16px;
-      font-weight: 500;
-
-      @include desktop {
-        @include primary-title;
-
-        font-size: 32px;
-      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: baseline;
+      padding: 80px 100px 0;
     }
 
-    .footer__banner_details {
-      margin: 0 22px 0;
-      @include desktop {
-        display: flex;
-        margin: 0 0 0 120px;
+    .footer-panel__nav-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &:last-child {
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
       }
 
-      .footer__img-bckg {
-        @include desktop {
-          background-image: url(../../../assets/Psycho/frontg.svg),
-            url(../../../assets/Psycho/backg.svg);
-          background-position: center right;
-          background-repeat: no-repeat;
-          width: 350px;
-          height: 350px;
-        }
-
-        .footer__img {
-          @include desktop {
-            width: 210px;
-            height: 210px;
-          }
-        }
-      }
-    }
-
-    .footer__description {
       @include desktop {
-        display: flex;
-        flex-direction: column;
-        width: 630px;
-        margin: 80px 0 0 45px;
-      }
-
-      .footer__heading {
-        @include normal-text;
-
-        text-align: justify;
-
-        @include desktop {
-          text-align: start;
+        &:last-child {
+          flex-direction: column;
           margin: 0;
+          align-items: flex-start;
         }
       }
 
-      .footer__text {
-        @include normal-text;
+      .footer-panel__nav_link {
+        color: $secondary-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
 
-        text-align: justify;
+        padding: 5px;
+        text-align: center;
 
         @include desktop {
-          margin: 20px 0 0 0;
+          font-size: 20px;
         }
       }
-    }
 
-    .footer__btn {
-      @include main-button;
+      .footer-panel__nav_email {
+        display: block;
 
-      display: block;
-      width: 150px;
-      margin: 40px auto;
+        font-size: 14px;
+        font-weight: 500;
 
-      @include desktop {
-        @include main-button;
-
-        width: 150px;
-        margin-top: 40px;
+        @include desktop {
+          margin-left: 0;
+          font-weight: 400;
+        }
       }
     }
   }
 
-  .footer-panel {
-    box-sizing: border-box;
-    margin: 10px auto;
-    padding: 15px;
-
-    background-color: $primary-color;
+  .footer-panel__copyright {
+    justify-content: center;
+    display: flex;
+    color: $secondary-color;
+    font-family: $font;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
     @include desktop {
-      margin: 170px auto 0;
-      background-image: url("../../../assets/footer-bckg.svg");
-      background-size: 100vw;
-      background-repeat: no-repeat;
-    }
-
-    .footer-panel__nav {
-      display: flex;
-      flex-direction: column;
-
-      @include desktop {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: baseline;
-        padding: 80px 100px 0;
-      }
-
-      .footer-panel__nav-col {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-
-        &:last-child {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        @include desktop {
-          &:last-child {
-            flex-direction: column;
-            margin: 0;
-            align-items: start;
-          }
-        }
-
-        .footer-panel__nav_link {
-          color: $secondary-color;
-          font-family: $font;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          text-decoration: none;
-
-          padding: 5px;
-          text-align: center;
-
-          @include desktop {
-            font-size: 20px;
-          }
-        }
-
-        .footer-panel__nav_email {
-          display: block;
-
-          font-size: 14px;
-          font-weight: 500;
-
-          @include desktop {
-            margin-left: 0;
-            font-weight: 400;
-          }
-        }
-      }
-    }
-
-    .footer-panel__copyright {
-      justify-content: center;
-      display: flex;
-      color: $secondary-color;
-      font-family: $font;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      @include desktop {
-      }
     }
   }
 }

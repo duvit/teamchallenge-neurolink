@@ -11,12 +11,15 @@ import { Specialist } from 'src/app/shared/types';
   styleUrls: ['./search-block.component.scss'],
 })
 export class SearchBlockComponent {
-  specialistsList!: Specialist[];
+  specialistsList!: any;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.specialistsList = this.userService.getMockSpecialists();
+    this.specialistsList = this.userService.getSpecialists().subscribe(
+      (data) => (this.specialistsList = data),
+      (error) => console.error('Error:', error)
+    );
   }
 
   // usersList: any[] = [];

@@ -21,6 +21,10 @@ import { LoginComponent } from './components/header/login/login.component';
 import { UserAgreementComponent } from './components/technical-department/user-agreement/user-agreement.component';
 import { PageNotFoundComponent } from './components/technical-department/page-not-found/page-not-found.component';
 import { SpecialistPageComponent } from './components/search-block/specialist-page/specialist-page.component';
+import { CalendarComponent } from './components/search-block/specialist-page//calendar/calendar.component';
+import { ArticleComponent } from './components/search-block/specialist-page/article/article.component';
+import { ReviewsComponent } from './components/search-block/specialist-page/reviews/reviews.component';
+import { NeedHelpComponent } from './components/main-content/need-help/need-help.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +45,17 @@ import { SpecialistPageComponent } from './components/search-block/specialist-pa
     UserAgreementComponent,
     PageNotFoundComponent,
     SpecialistPageComponent,
+    CalendarComponent,
+    ArticleComponent,
+    ReviewsComponent,
+    NeedHelpComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

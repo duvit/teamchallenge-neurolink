@@ -2,9 +2,13 @@
 
 .about-us__section {
   margin: 30px 43px 0;
+  position: relative;
+  z-index: 10;
 
   @include desktop {
-    margin: 330px 43px 0;
+    @include adaptive-value("margin-top", 330, 80);
+    @include adaptive-value("margin-left", 80, 20);
+    @include adaptive-value("margin-right", 80, 20);
   }
 
   .about-us__title {
@@ -27,14 +31,18 @@
 
     @include desktop {
       flex-direction: row;
-      margin: 100px auto 0;
+      margin: 0 auto 0;
+      @include adaptive-value("margin-top", 100, 22);
+      justify-content: space-between;
     }
 
     .about-us-card {
-      margin: 20px auto 0;
+      margin: 20px 0 0;
+      text-align: center;
 
       @include desktop {
-        width: 330px;
+        @include adaptive-value("width", 290, 200); // width: 330px;
+        margin: 0;
       }
 
       .about-us-card__title {
@@ -54,11 +62,12 @@
       .about-us-card__content {
         @include normal-text;
 
-        text-align: justify;
+        // text-align: justify;
         font-size: 14px;
 
         @include desktop {
-          font-size: 20px;
+          @include adaptive-value("font-size", 20, 14);
+          white-space: wrap;
         }
       }
     }

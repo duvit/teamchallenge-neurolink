@@ -1,3 +1,14 @@
+@mixin adaptive-value($property, $startSize, $minSize) {
+  $maxWidth: 1280;
+  // $maxWidthContainer: 1120px;
+
+  $addSize: $startSize - $minSize;
+
+  #{$property}: calc(
+    #{$minSize + px} + #{$addSize} * ((100vw - 480px) / #{$maxWidth - 480})
+  );
+}
+
 @mixin main-button {
   color: $secondary-color;
   font-family: $font;
