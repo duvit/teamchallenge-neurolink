@@ -1,33 +1,19 @@
 <form class="search-form">
-  <div class="search-form__block">
-    <button class="search-icon" type="button">
-      <img src="../../../../assets/icons/filter-icn.svg" />
-      <span class="search-icon__btn-txt">Фільтр</span>
-    </button>
-    <input
-      class="search-form__filter"
-      type="text"
-      placeholder="Фільтр"
-      name=""
-      id=""
-    />
+  
+  <div class="input-container">
+    <img src="../../../../assets/icons/filter-icn.svg" />
+    <input class="input-field" type="text" placeholder="Фільтр" name="filter" />
   </div>
-  <div class="search-form__block">
-    <button class="search-icon" type="button">
-      <img src="../../../../assets/icons/search-icn.svg" />
-      <span class="search-icon__btn-txt">Пошук</span>
-    </button>
-    <input
-      class="search-form__search"
-      type="text"
-      placeholder="Пошук"
-      name=""
-      id=""
-    />
+
+  <div class="input-container">
+    <img src="../../../../assets/icons/search-icn.svg" />
+    <input class="input-field" type="text" placeholder="Пошук" name="search" />
   </div>
+
   <div class="search-form__sel">
     <select class="search-form__select" name="pets" id="pet-select">
-      <option value="">Cортувати</option>
+      <option value="0">Cортувати</option>
+      <option value="1">Cортувати</option>
     </select>
   </div>
 </form>

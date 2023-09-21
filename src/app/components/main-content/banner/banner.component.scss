@@ -3,7 +3,7 @@
 .banner {
   position: relative;
   z-index: 1;
-  margin: 40px 24px 0;
+  margin: 0 0 0 24px;
 
   @include desktop {
     position: relative;
@@ -14,7 +14,7 @@
 
   .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
 
     @include desktop {
       display: flex;
@@ -23,6 +23,8 @@
     }
 
     .text {
+      margin-top: 40px;
+
       @include desktop {
         position: relative;
         height: 220px;
@@ -53,7 +55,7 @@
         letter-spacing: 1.6px;
 
         width: 160px;
-   
+        margin: 0;
 
         @include desktop {
           width: 100%;
@@ -74,6 +76,7 @@
           white-space: nowrap;
           @include adaptive-value("margin-top", 40, 8);
           @include adaptive-value("font-size", 24, 16);
+          margin-bottom: 0;
           font-style: normal;
           font-weight: 500;
           line-height: normal;
@@ -91,10 +94,17 @@
       }
 
       .girl-img-spot {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 210px;
+        position: absolute;
+        top: 32px;
+        left: -30px;
 
         @include desktop {
+          position: relative;
+          // right: 0;
+          // top: -30px;
+
           @include adaptive-value("width", 450, 350);
           @include adaptive-value("height", 450, 350);
         }
@@ -104,16 +114,20 @@
 
   .learn-more-btn {
     @include main-button;
-    position: relative;
-    top: 60px;
-    left: 50%;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    margin: 115px auto;
+
     width: 190px;
     z-index: 10;
 
     @include desktop {
       display: block;
       position: static;
-      @include adaptive-value("margin-top", 48, 18);
+      margin-left: 0;
+      @include adaptive-value("margin-top", 40, 18);
     }
   }
 }

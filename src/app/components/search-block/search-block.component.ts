@@ -16,7 +16,8 @@ export class SearchBlockComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.specialistsList = this.userService.getSpecialists().subscribe(
+    this.specialistsList = this.userService.getSpecialists()
+    .subscribe(
       (data) => (this.specialistsList = data),
       (error) => console.error('Error:', error)
     );

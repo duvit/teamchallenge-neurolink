@@ -23,16 +23,16 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  // ngOnInit(): void {
-  //   this.usersListSubscription = this.getSpecialists().subscribe(
-  //     (response: Specialist[]) => {
-  //       this.specialistsList = response;
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+  ngOnInit(): void {
+    this.usersListSubscription = this.getSpecialists().subscribe(
+      (response: Specialist[]) => {
+        this.specialistsList = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 
   loginUser() {
     const url = `${this.baseUrl}${this.loginEndpoint}`;

@@ -64,10 +64,11 @@
 }
 
 @mixin seacrh-field {
-  width: 100%;
-  max-width: 3600px;
-  min-width: 220px;
-  height: 44px;
+  // width: 100%;
+  @include adaptive-value("width", 360, 120);
+   // max-width: 3600px;
+    // min-width: 220px;
+    height: 44px;
   border-radius: 10px;
   outline: none;
   border: none;

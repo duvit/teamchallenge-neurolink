@@ -1,13 +1,13 @@
 @import "../../../../styles.scss";
 
-.footer__banner {
-  margin: 0 22px auto;
+.wrapper {
+  margin: 0 32px auto;
 
   @include desktop {
     width: 100%;
-    margin: 120px auto 0;
+    margin: 120px 0 0;
   }
-  .footer__banner_title {
+  .banner__title {
     @include primary-title;
 
     font-size: 16px;
@@ -20,8 +20,9 @@
     }
   }
 
-  .footer__banner_details {
-    margin: 0 22px 0;
+  .banner__details {
+    margin: 0;
+
     @include desktop {
       display: flex;
       margin: 0 0 0 120px;
@@ -29,7 +30,7 @@
       justify-content: center;
     }
 
-    .footer__img-bckg {
+    .banner__img-bckg {
       @include desktop {
         background-image: url(../../../../assets/Psycho/frontg.svg),
           url(../../../../assets/Psycho/backg.svg);
@@ -39,7 +40,7 @@
         height: 350px;
       }
 
-      .footer__img {
+      .banner__img {
         @include desktop {
           width: 210px;
           height: 210px;
@@ -48,7 +49,9 @@
     }
   }
 
-  .footer__description {
+  .banner__description {
+    width: 100%;
+
     @include desktop {
       display: flex;
       flex-direction: column;
@@ -56,29 +59,33 @@
       margin: 80px 0 0 45px;
     }
 
-    .footer__heading {
+    .banner__heading {
       @include normal-text;
+      font-size: 14px;
 
       text-align: justify;
 
       @include desktop {
+        @include normal-text;
         text-align: start;
         margin: 0;
       }
     }
 
-    .footer__text {
+    .banner__text {
       @include normal-text;
+      font-size: 14px;
 
       text-align: justify;
 
       @include desktop {
+        @include normal-text;
         margin: 20px 0 0 0;
       }
     }
   }
 
-  .footer__btn {
+  .banner__btn {
     @include main-button;
 
     display: block;

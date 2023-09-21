@@ -1,29 +1,99 @@
 @import "../../../../styles.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 .search-form {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 24px 0;
+  gap: 10px;
 
   @include desktop {
     display: grid;
-    grid-template-columns:  1fr 2fr 1fr;
-    justify-content: center;
-    gap: 80px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    margin: 0;
+    gap: 20px;
+  }
 
+  .input-container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0;
+
+    @include desktop {
+      height: 42px;
+      padding-left: 24px;
+      @include adaptive-value("width", 320, 128);
+
+      // @include adaptive-value("padding-right", 200, 0);
+    }
+
+    .input-field {
+      // height: 43px;
+      padding: 0;
+      outline: none;
+      border: none;
+      color: #343241;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      @include desktop {
+        margin-left: 20px;
+        @include adaptive-value("width", 300, 10);
+      }
+    }
+  }
+
+  .search-form__sel {
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      padding: 10px 0 9px 20px;
+      @include adaptive-value("padding-right", 251, 0);
+    }
+
+    .search-form__select {
+      width: 110px;
+
+      padding: 0;
+      outline: none;
+      border: none;
+      color: #343241;
+      font-family: $font;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      @include desktop {
+        height: 42px;
+        @include adaptive-value("width", 130, 90);
+      }
+    }
   }
 
   .search-form__block {
     @include desktop {
       position: relative;
-      width: 100%;
       box-sizing: border-box;
+
+      @include adaptive-value("width", 360, 240);
     }
 
     .search-icon {
       display: flex;
       align-items: center;
-      justify-content: start;
+      justify-content: flex-start;
 
       width: 160px;
       height: 38px;
@@ -82,7 +152,7 @@
       @include desktop {
         @include seacrh-field;
 
-        min-width: 330px;
+        // min-width: 330px;
         display: block;
         margin-left: 5px;
         padding-left: 50px;
@@ -95,7 +165,10 @@
 
     @include desktop {
       display: block;
-      max-width: 360px;
+      @include adaptive-value("width", 360, 120);
+    }
+
+    select {
     }
 
     .search-form__select {

@@ -13,9 +13,12 @@
 
   .categories__title {
     margin: 40px auto 0;
+    @include primary-title;
+    font-size: 16px;
+    font-weight: 600;
 
     @include desktop {
-      @include primary-title;
+      // @include primary-title;
 
       display: block;
       margin: 0 auto 0;
@@ -28,7 +31,7 @@
     justify-content: space-around;
     @include adaptive-value("grid-gap", 20, 8);
     margin-top: 46px;
-    
+
     @include desktop {
       grid-template-columns: repeat(4, auto);
       // justify-content: space-around;
