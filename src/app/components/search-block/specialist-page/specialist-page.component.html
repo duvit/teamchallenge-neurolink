@@ -5,15 +5,15 @@
 
   <div class="specialist__profile">
     <img
-      class="specialist__photo"
+      class="specialist__profile__photo"
       src="{{ specialist.photoLink }}"
       alt="Photo"
     />
 
-    <div class="specialist__info">
+    <div class="specialist__profile__info">
       <div class="specialist__categories">
-        <span *ngFor="let category of specialist.categories"
-          >{{ category }},
+        <span *ngFor="let category of specialist.categories; let last = last"
+          >{{ category }}<ng-container *ngIf="!last">, </ng-container>
         </span>
       </div>
 
@@ -25,25 +25,29 @@
 
       <p class="specialist__price">{{ specialist.price }} грн/год</p>
     </div>
-  </div>
 
-  <div class="specialist__about">
-    <h4 class="specialist__about-title">Про себе</h4>
-    <p>
-      Вітаю! Я сертифікований психолог та гештальт-терапевт. В психології більше
-      7 років. Я рада постійному розвитку та навчанню який є на моєму
-      професійному та життєвому шляху. Це допомагає краще відчувати потреби
-      людей які звертаються до мене та разом з ними долати виклики які дає нам
-      життя. До мене звертаються з такими запитами як дитячі травми, пошук себе,
-      комунікація з іншими, відчуття своєї самоцінності і т.д. Не бійтеся
-      відкритися своїм відчуттям та думкам. Зробіть один маленький крок
-      назустріч собі та відчуйте безмежний потенціал у цьому світі.
-    </p>
+    <div class="specialist__about">
+      <h4 class="specialist__about__title">Про себе</h4>
+      <p class="specialist__about__text">
+        Вітаю! Я сертифікований психолог та гештальт-терапевт. В психології
+        більше 7 років. Я рада постійному розвитку та навчанню який є на моєму
+        професійному та життєвому шляху. Це допомагає краще відчувати потреби
+        людей які звертаються до мене та разом з ними долати виклики які дає нам
+        життя. До мене звертаються з такими запитами як дитячі травми, пошук
+        себе, комунікація з іншими, відчуття своєї самоцінності і т.д. Не
+        бійтеся відкритися своїм відчуттям та думкам. Зробіть один маленький
+        крок назустріч собі та відчуйте безмежний потенціал у цьому світі.
+      </p>
+    </div>
   </div>
 
   <div class="specialist__areas">
     <h4 class="specialist__areas-title">З якими напрямками я працюю</h4>
-    <span></span>
+    <div class="specialist__areas-items">
+      <span class="specialist__areas-item" *ngFor="let area of specialist.areas"
+        >{{ area }}
+      </span>
+    </div>
   </div>
 
   <div class="specialist__reception">

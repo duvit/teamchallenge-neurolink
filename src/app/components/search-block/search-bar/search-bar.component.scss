@@ -5,11 +5,10 @@
 }
 
 .search-form {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   justify-content: space-between;
-  align-items: center;
   margin: 0 24px 0;
-  gap: 10px;
 
   @include desktop {
     display: grid;
@@ -21,10 +20,12 @@
 
   .input-container {
     display: flex;
+    width: 146px;
+    height: 36px;
     align-items: center;
     border-radius: 10px;
     background: #fff;
-    padding: 0;
+    padding: 10px;
 
     @include desktop {
       height: 42px;
@@ -35,7 +36,9 @@
     }
 
     .input-field {
-      // height: 43px;
+      width: 98px;
+      height: 36px;
+      margin-left: 10px;
       padding: 0;
       outline: none;
       border: none;

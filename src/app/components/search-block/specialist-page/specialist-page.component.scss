@@ -1,10 +1,194 @@
+@import "../../../../styles.scss";
+
 .specialist {
-  &__photo {
-    width: 150px;
-    height: 200px;
+  margin: 42px 24px 0;
+
+  @include desktop {
+    margin: 42px 80px 0;
+  }
+  &__name {
+    text-align: center;
+    color: $main-text-color;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.8px;
+
+    @include desktop {
+      @include adaptive-value("font-size", 32, 16);
+    }
   }
 
   &__profile {
-    display: flex;
+    display: grid;
+    grid-template-areas:
+      "photo info info info info info info info info"
+      "about about about about about about about about about";
+    margin-top: 20px;
+    @include adaptive-value("gap", 14, 12);
+
+    @include desktop {
+      display: grid;
+      grid-template-areas:
+        "photo info "
+        "photo about";
+    }
+
+    &__photo {
+      grid-area: photo;
+      width: 106px;
+      height: 140px;
+      border-radius: 10px;
+
+      @include desktop {
+        @include adaptive-value("width", 360, 106);
+        @include adaptive-value("height", 480, 140);
+      }
+    }
+
+    &__info {
+      grid-area: info;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+
+      .specialist__categories {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 24, 14);
+        }
+      }
+
+      .specialist__practice {
+        margin: 0;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 20, 12);
+        }
+      }
+
+      .specialist__location {
+        margin: 0;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 20, 12);
+        }
+      }
+
+      .specialist__price {
+        margin: 0;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 20, 14);
+        }
+      }
+    }
+
+    .specialist__about {
+      grid-area: about;
+      margin-top: 20px;
+
+      .specialist__about__title {
+        margin: 0;
+        text-align: start;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.8px;
+
+        @include desktop {
+          @include adaptive-value("font-size", 24, 16);
+        }
+      }
+
+      .specialist__about__text {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 20, 12);
+        }
+      }
+    }
+  }
+
+  &__areas {
+    &-title {
+      text-align: center;
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.8px;
+    }
+
+    .specialist__areas-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .specialist__areas-item {
+        padding: 7px 6px 6px 6px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: $primary-color;
+        color: #f1f0f5;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+
+  &__reception {
+    &-title {
+      text-align: center;
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.8px;
+    }
   }
 }

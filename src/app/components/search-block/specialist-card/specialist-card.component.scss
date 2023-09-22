@@ -1,49 +1,76 @@
 @import "../../../../styles.scss";
 
 .specialist-card {
-  width: 100%;
-  height: 402px;
+  width: 272px;
+  height: 292px;
   margin: 10px auto;
-
+  padding: 10px;
+  box-sizing: content-box;
   border-radius: 10px;
-  border: 1px solid #8c8c94;
-  background: #f1f0f5;
+
+  background: #fff;
+
+  @include desktop {
+    box-sizing: border-box;
+    padding: 20px;
+    @include adaptive-value("width", 360, 272);
+    @include adaptive-value("height", 402, 292);
+  }
 
   .specialist-card__main {
     display: flex;
     gap: 10px;
-
     margin: 20px;
+    margin: 0;
 
     .specialist-card__photo {
-      width: 150px;
-      height: 200px;
+      width: 122px;
+      height: 152px;
+
+      @include desktop {
+        @include adaptive-value("width", 150, 122);
+        @include adaptive-value("height", 200, 152);
+      }
     }
 
     .specialist-card__info {
+      margin: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+
       .specialist-card__name {
         margin: 0;
         color: $main-text-color;
-        font-family: $font;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-      }
-
-      .pecialist-card__practice {
-        color: $main-text-color;
-
         font-family: $font;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 24, 14);
+        }
+      }
+
+      .specialist-card__practice {
+        margin: 0;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        @include desktop {
+          @include adaptive-value("font-size", 14, 12);
+        }
       }
 
       .specialist-card__price {
+        margin: 0;
         color: $main-text-color;
-
         font-family: $font;
         font-size: 14px;
         font-style: normal;
@@ -71,30 +98,36 @@
   }
 
   .specialist-card__description {
-    margin: 20px;
+    margin: 10px auto 0;
 
     color: $main-text-color;
     font-family: $font;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0.8px;
+
+    @include desktop {
+      @include adaptive-value("font-size", 16, 14);
+    }
   }
 
   .specialist-card__link {
+    display: block;
+    text-align: end;
+    margin-top: 10px;
     color: #6669a0;
-
     font-family: $font;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-decoration-line: underline;
-    justify-content: end;
 
     @include desktop {
-      margin: 20px;
+      text-align: start;
+      margin-top: 10px;
     }
   }
 
@@ -103,6 +136,10 @@
 
     display: block;
     width: 220px;
-    margin: 28px auto 0;
+    margin: 20px auto 0;
+
+    @include desktop {
+      margin: 37px auto 0;
+    }
   }
 }

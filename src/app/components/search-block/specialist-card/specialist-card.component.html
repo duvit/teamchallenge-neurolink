@@ -9,18 +9,19 @@
       <h4 class="specialist-card__name">
         {{ specialist.name }} {{ specialist.surName }}
       </h4>
-      <!-- <p>{{ specialist.id }}</p> -->
       <p class="specialist-card__practice">
         {{ specialist.experience }} років практики
       </p>
-      <p class="specialist-card__price">{{ specialist.price }} грн/год</p>
       <div class="specialist-card__rating">R A T I N G</div>
+      <p class="specialist-card__price">{{ specialist.price }} грн/год</p>
       <p class="specialist-card__location">{{ specialist.location }}</p>
     </div>
   </div>
 
   <div class="specialist-card__description">
-    <span *ngFor="let category of specialist.categories">{{ category }}, </span>
+    <span *ngFor="let category of specialist.categories; let last = last"
+      >{{ category }}<ng-container *ngIf="!last">, </ng-container>
+    </span>
   </div>
   <a
     class="specialist-card__link"

@@ -4,7 +4,7 @@ export interface Specialist {
   surName: string;
   email: string;
   password: string;
-  phone:string;
+  phone: string;
   price: number;
   location: string;
   online: boolean;
@@ -13,5 +13,6 @@ export interface Specialist {
   rating: number;
   description: string;
   categories: string[];
+  areas: string[];
   photoLink: string;
 }
