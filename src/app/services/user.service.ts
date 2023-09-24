@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 
 import { Specialist } from '../shared/types';
@@ -8,7 +8,7 @@ import { Specialist } from '../shared/types';
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'https://134.249.52.201:8080';
+  private baseUrl = 'http://134.249.52.201:443';
   private registrationEndpoint = '/createUser';
   private usersEndpoint = '/psychologist/getAll';
   private loginEndpoint = '/login';
@@ -24,6 +24,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    console.log('load');
     this.usersListSubscription = this.getSpecialists().subscribe(
       (response: Specialist[]) => {
         this.specialistsList = response;
@@ -54,9 +55,23 @@ export class UserService {
   }
 
   getSpecialistById(id: number): Specialist {
-    return this.specialistsMockList.find(
-      (specialist: Specialist) => specialist.id === id
-    )!;
+    return this.specialistsList.find((specialist) => specialist.id === id)!;
+  }
+
+  getFilteredItems(filterParams: any): Observable<Specialist[]> {
+    let params = new HttpParams();
+    const url = `${this.baseUrl}${this.usersEndpoint}`;
+
+    // Додайте параметри фільтрації до запиту
+    for (const key in filterParams) {
+      if (filterParams[key] !== null) {
+        params = params.append(key, filterParams[key]);
+        console.log(filterParams[key]);
+      }
+    }
+
+    console.log(url, { params });
+    return this.http.get<Specialist[]>(url, { params });
   }
 
   specialistsMockList: Specialist[] = [

@@ -1,6 +1,7 @@
 @import "../../../../styles.scss";
 
 .banner {
+  // height: 100vh;
   position: relative;
   z-index: 1;
   margin: 0 0 0 24px;
@@ -94,19 +95,20 @@
       }
 
       .girl-img-spot {
-        width: 220px;
-        height: 210px;
+        @include adaptive-value("width", 450, 200);
+        @include adaptive-value("height", 450, 204);
         position: absolute;
         top: 32px;
-        left: -30px;
+        left: 40px;
+
 
         @include desktop {
           position: relative;
           // right: 0;
           // top: -30px;
 
-          @include adaptive-value("width", 450, 350);
-          @include adaptive-value("height", 450, 350);
+          @include adaptive-value("width", 450, 220);
+          @include adaptive-value("height", 450, 210);
         }
       }
     }

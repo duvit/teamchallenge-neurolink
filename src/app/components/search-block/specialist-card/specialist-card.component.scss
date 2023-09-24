@@ -3,7 +3,7 @@
 .specialist-card {
   width: 272px;
   height: 292px;
-  margin: 10px auto;
+  margin: 0 auto 20px;
   padding: 10px;
   box-sizing: content-box;
   border-radius: 10px;
@@ -12,9 +12,10 @@
 
   @include desktop {
     box-sizing: border-box;
-    padding: 20px;
+    @include adaptive-value("padding", 20, 10);
+
     @include adaptive-value("width", 360, 272);
-    @include adaptive-value("height", 402, 292);
+    @include adaptive-value("height", 402, 322);
   }
 
   .specialist-card__main {
@@ -24,6 +25,7 @@
     margin: 0;
 
     .specialist-card__photo {
+      border-radius: 10px;
       width: 122px;
       height: 152px;
 

@@ -18,6 +18,7 @@ export class SpecialistPageComponent {
   ) {}
 
   ngOnInit(): void {
+    console.log('wtf');
     this.id = +this.route.snapshot.paramMap.get('id')!;
     this.specialist = this.userService.getSpecialistById(this.id);
   }

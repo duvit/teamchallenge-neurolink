@@ -85,13 +85,15 @@
     display: flex;
     color: $secondary-color;
     font-family: $font;
-    font-size: 12px;
+    @include adaptive-value("font-size", 12, 10);
+
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 16px 0 0;
 
     @include desktop {
+      font-size: 12px;
     }
   }
 }

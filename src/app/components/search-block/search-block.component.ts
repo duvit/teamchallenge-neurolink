@@ -13,32 +13,62 @@ import { Specialist } from 'src/app/shared/types';
 export class SearchBlockComponent {
   specialistsList!: any;
 
+  selectedCategories: string[] = [];
+  selectedLocation: string = '';
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.specialistsList = this.userService.getMockSpecialists()
-    // .subscribe(
-    //   (data) => (this.specialistsList = data),
-    //   (error) => console.error('Error:', error)
-    // );
+    this.specialistsList = this.userService.getSpecialists().subscribe(
+      (data) => (this.specialistsList = data),
+      (error) => console.error('Error:', error)
+    );
   }
 
-  // usersList: any[] = [];
+  toggleCategory(category: string) {
+    if (this.selectedCategories.includes(category)) {
+      // Видаляємо категорію, якщо вона вже була обрана
+      this.selectedCategories = this.selectedCategories.filter(
+        (item) => item !== category
+      );
+      this.userService.getSpecialists();
+      this.applyFilter();
+    } else {
+      // Додаємо категорію, якщо вона не була обрана
+      this.selectedCategories.push(category);
+      this.applyFilter();
+    }
+  }
 
-  // private usersListSubscription: Subscription | undefined;
+  toggleCity(city: string) {
+    if (this.selectedLocation === city) {
+      // Видаляємо категорію, якщо вона вже була обрана
+      this.selectedLocation = '';
+      this.userService.getSpecialists();
+      this.applyFilter();
+    } else {
+      // Додаємо категорію, якщо вона не була обрана
+      this.selectedLocation = city;
+      this.applyFilter();
+    }
+  }
 
-  // constructor(private userSerivce: UserService) {}
+  filterItems(filterParams: any) {
+    this.userService.getFilteredItems(filterParams).subscribe((items) => {
+      this.specialistsList = items;
+    });
+  }
 
-  // ngOnInit(): void {
-  //   this.usersListSubscription = this.userSerivce.getUsers().subscribe(
-  //     (response: any[]) => {
-  //       this.usersList = response;
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+  applyFilter() {
+    const filterParams = {
+      categories: this.selectedCategories,
+      location: this.selectedLocation,
+    };
+    console.log(filterParams.categories);
+    console.log(filterParams.location);
+
+    return this.filterItems(filterParams);
+  }
 
   // ngOnDestroy(): void {
   //   if (this.usersListSubscription) {

@@ -21,15 +21,8 @@
     @include desktop {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      // flex-wrap: wrap;
-      // // justify-content: center;
       margin: 86px auto 0;
       gap: 20px;
-    }
-    .app-specialist-card {
-      @include desktop {
-        width: 360px;
-      }
     }
   }
 

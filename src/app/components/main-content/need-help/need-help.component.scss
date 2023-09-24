@@ -2,9 +2,9 @@
 
 .wrapper {
   margin: 0 32px auto;
+  padding: 20px;
 
   @include desktop {
-    width: 100%;
     margin: 120px 0 0;
   }
   .banner__title {
@@ -15,7 +15,6 @@
 
     @include desktop {
       @include primary-title;
-
       font-size: 32px;
     }
   }
@@ -25,26 +24,16 @@
 
     @include desktop {
       display: flex;
-      margin: 0 0 0 120px;
       align-items: center;
       justify-content: center;
     }
 
-    .banner__img-bckg {
+    .banner__img {
+      display: none;
       @include desktop {
-        background-image: url(../../../../assets/Psycho/frontg.svg),
-          url(../../../../assets/Psycho/backg.svg);
-        background-position: center right;
-        background-repeat: no-repeat;
-        width: 350px;
-        height: 350px;
-      }
-
-      .banner__img {
-        @include desktop {
-          width: 210px;
-          height: 210px;
-        }
+        display: block;
+        @include adaptive-value("width", 350, 250);
+        @include adaptive-value("height", 350, 250);
       }
     }
   }
@@ -55,8 +44,8 @@
     @include desktop {
       display: flex;
       flex-direction: column;
-      width: 630px;
-      margin: 80px 0 0 45px;
+      @include adaptive-value("width", 630, 320);
+      // margin: 80px 0 0 45px;
     }
 
     .banner__heading {
