@@ -1,5 +1,5 @@
 <header class="header">
-  <a class="header-logo" routerLink="/">
+  <a class="header-logo" routerLink="/" (click)="mobileNav()">
     <img
       class="header-logo-img"
       src="../../../assets/img/main-logo.png"
@@ -16,7 +16,7 @@
       <a class="nav-link" href="#">Питання</a>
     </nav>
 
-    <nav class="nav-mobile" #nav>
+    <nav class="nav-mobile" [ngClass]="{ active: isMobileNavOpen }" #nav>
       <a class="nav-link" href="#">Про нас</a>
       <a class="nav-link" href="#">Психологам</a>
       <a class="nav-link" href="#">Типи терапії</a>
@@ -56,8 +56,13 @@
         </g>
       </svg>
     </button>
-    <a routerLink="/login" (click)="closeMobileNav()">
-      <button class="login-btn" type="button" #loginBtn>
+    <a routerLink="/login" (click)="mobileNav()">
+      <button
+        class="login-btn"
+        type="button"
+        [ngClass]="{ active: isMobileNavOpen }"
+        #loginBtn
+      >
         <span>Вхід</span>
         <svg
           class="login-btn-icon"
@@ -89,7 +94,11 @@
     </a>
   </div>
 
-  <div class="mobile-navbar_btn" (click)="openMobileNav()">
+  <div
+    class="mobile-navbar_btn"
+    (click)="mobileNav()"
+    [ngClass]="{ active: isMobileNavOpen }"
+  >
     <span
       class="mobile-navbar__dash"
       *ngFor="let _ of [1, 2, 3, 4]"

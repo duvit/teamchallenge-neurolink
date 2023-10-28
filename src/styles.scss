@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
 
-  @include desktop {
-    min-width: 1024px;
-  }
+  // @include desktop {
+  //   min-width: 1024px;
+  // }
 }

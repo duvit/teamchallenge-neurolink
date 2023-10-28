@@ -1,1 +1,18 @@
-<p>article works!</p>
+<div class="wrapper">
+  <div class="article-container" *ngFor="let article of articles">
+    <img class="article-img" src="{{ article.img }}" alt="" />
+    <div class="article">
+      <h2 class="article-title">{{ article.title }}</h2>
+      <p class="article-descr">
+        {{ article.text }}
+      </p>
+      <p class="article-author">
+        Автор: <span class="article-author-strong"> {{ article.author }}</span>
+      </p>
+      <div class="article-meta">
+        <span class="article-meta__date"> {{ article.date }}</span>
+        <a class="article-meta__read-more" href="">Читати</a>
+      </div>
+    </div>
+  </div>
+</div>

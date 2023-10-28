@@ -19,10 +19,11 @@ export class SearchBlockComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.specialistsList = this.userService.getSpecialists().subscribe(
-      (data) => (this.specialistsList = data),
-      (error) => console.error('Error:', error)
-    );
+    this.specialistsList = this.userService.getMockSpecialists()
+    // .subscribe(
+    //   (data) => (this.specialistsList = data),
+    //   (error) => console.error('Error:', error)
+    // );
   }
 
   toggleCategory(category: string) {

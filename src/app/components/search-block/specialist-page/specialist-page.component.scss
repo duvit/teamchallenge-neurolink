@@ -1,123 +1,150 @@
 @import "../../../../styles.scss";
 
-.specialist {
+.wrapper {
   margin: 42px 24px 0;
-
-  @include desktop {
-    margin: 42px 80px 0;
-  }
-  &__name {
-    text-align: center;
-    color: $main-text-color;
-    font-family: $font;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.8px;
-
+  .specialist {
     @include desktop {
-      @include adaptive-value("font-size", 32, 16);
+      margin: 42px 80px 0;
     }
-  }
-
-  &__profile {
-    display: grid;
-    grid-template-areas:
-      "photo info info info info info info info info"
-      "about about about about about about about about about";
-    margin-top: 20px;
-    @include adaptive-value("gap", 14, 12);
-
-    @include desktop {
-      display: grid;
-      grid-template-areas:
-        "photo info "
-        "photo about";
-    }
-
-    &__photo {
-      grid-area: photo;
-      width: 106px;
-      height: 140px;
-      border-radius: 10px;
+    &__name {
+      text-align: center;
+      color: $main-text-color;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.8px;
 
       @include desktop {
-        @include adaptive-value("width", 360, 106);
-        @include adaptive-value("height", 480, 140);
+        @include adaptive-value("font-size", 32, 16);
       }
     }
 
-    &__info {
-      grid-area: info;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: space-between;
-
-      .specialist__categories {
-        color: $main-text-color;
-        font-family: $font;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-
-        @include desktop {
-          @include adaptive-value("font-size", 24, 14);
-        }
-      }
-
-      .specialist__practice {
-        margin: 0;
-        color: $main-text-color;
-        font-family: $font;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-
-        @include desktop {
-          @include adaptive-value("font-size", 20, 12);
-        }
-      }
-
-      .specialist__location {
-        margin: 0;
-        color: $main-text-color;
-        font-family: $font;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-
-        @include desktop {
-          @include adaptive-value("font-size", 20, 12);
-        }
-      }
-
-      .specialist__price {
-        margin: 0;
-        color: $main-text-color;
-        font-family: $font;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-
-        @include desktop {
-          @include adaptive-value("font-size", 20, 14);
-        }
-      }
-    }
-
-    .specialist__about {
-      grid-area: about;
+    &__profile {
+      display: grid;
+      grid-template-areas:
+        "photo info info info info info info info info"
+        "about about about about about about about about about";
       margin-top: 20px;
+      @include adaptive-value("gap", 14, 12);
 
-      .specialist__about__title {
-        margin: 0;
-        text-align: start;
+      @include desktop {
+        display: grid;
+        grid-template-areas:
+          "photo info "
+          "photo about";
+      }
+
+      &__photo {
+        grid-area: photo;
+        width: 106px;
+        height: 140px;
+        border-radius: 10px;
+
+        @include desktop {
+          @include adaptive-value("width", 360, 106);
+          @include adaptive-value("height", 480, 140);
+        }
+      }
+
+      &__info {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+
+        .specialist__categories {
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+
+          @include desktop {
+            @include adaptive-value("font-size", 24, 14);
+          }
+        }
+
+        .specialist__practice {
+          margin: 0;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @include desktop {
+            @include adaptive-value("font-size", 20, 12);
+          }
+        }
+
+        .specialist__location {
+          margin: 0;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @include desktop {
+            @include adaptive-value("font-size", 20, 12);
+          }
+        }
+
+        .specialist__price {
+          margin: 0;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+
+          @include desktop {
+            @include adaptive-value("font-size", 20, 14);
+          }
+        }
+      }
+
+      .specialist__about {
+        grid-area: about;
+        margin-top: 20px;
+
+        .specialist__about__title {
+          margin: 0;
+          text-align: start;
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.8px;
+
+          @include desktop {
+            @include adaptive-value("font-size", 24, 16);
+          }
+        }
+
+        .specialist__about__text {
+          color: $main-text-color;
+          font-family: $font;
+          font-size: 12px;
+          font-weight: 400;
+
+          @include desktop {
+            @include adaptive-value("font-size", 20, 12);
+          }
+        }
+      }
+    }
+
+    &__areas {
+      &-title {
+        text-align: center;
         color: $main-text-color;
         font-family: $font;
         font-size: 16px;
@@ -125,70 +152,115 @@
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0.8px;
-
-        @include desktop {
-          @include adaptive-value("font-size", 24, 16);
-        }
       }
 
-      .specialist__about__text {
+      .specialist__areas-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .specialist__areas-item {
+          padding: 7px 6px 6px 6px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          background: $primary-color;
+          color: #f1f0f5;
+          font-family: $font;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__reception {
+      &-title {
+        text-align: center;
         color: $main-text-color;
         font-family: $font;
-        font-size: 12px;
+        font-size: 16px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         line-height: normal;
+        letter-spacing: 0.8px;
+      }
+
+      &-descr {
+        width: 100%;
+        padding: 0 6px;
 
         @include desktop {
-          @include adaptive-value("font-size", 20, 12);
+          text-align: center;
         }
       }
     }
-  }
 
-  &__areas {
-    &-title {
-      text-align: center;
-      color: $main-text-color;
-      font-family: $font;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 0.8px;
-    }
+    &__articles {
+      margin: 40px auto 0;
 
-    .specialist__areas-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-
-      .specialist__areas-item {
-        padding: 7px 6px 6px 6px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        background: $primary-color;
-        color: #f1f0f5;
+      &-title {
+        text-align: center;
+        margin: 0 auto;
+        color: $main-text-color;
         font-family: $font;
-        font-size: 12px;
-        font-style: normal;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+
+        @include desktop {
+          font-size: 32px;
+          letter-spacing: 1.6px;
+        }
+      }
+
+      &-btn {
+        @include main-button;
+        display: block;
+        margin: 28px auto 0;
+
+        color: #f5f5f5;
+        font-size: 14px;
         font-weight: 400;
-        line-height: normal;
+        letter-spacing: 0.7px;
       }
     }
-  }
 
-  &__reception {
-    &-title {
-      text-align: center;
-      color: $main-text-color;
-      font-family: $font;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 0.8px;
+    &__reviews {
+
+      @include desktop {
+      margin: 120px 0 0;
+      }
+
+      &-title {
+        text-align: center;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+
+        @include desktop {
+          font-size: 32px;
+          letter-spacing: 1.6px;
+        }
+      }
+
+      &-arrows {
+        display: flex;
+        width: 272px;
+        justify-content: space-between;
+        margin: 20px auto 0;
+
+        @include desktop {
+          width: 1120px;
+          margin: 40px auto 0;
+        }
+      }
+
+      &-arrow {
+        background-color: transparent;
+        border: none;
+      }
     }
   }
 }

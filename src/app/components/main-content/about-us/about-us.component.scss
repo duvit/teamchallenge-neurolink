@@ -1,9 +1,9 @@
-@import "../../../../styles.scss";
+@import "src/styles.scss";
 
 .about-us__section {
   margin: 160px 43px 0;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 
   @include desktop {
     @include adaptive-value("margin-top", 330, 80);

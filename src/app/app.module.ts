@@ -23,7 +23,7 @@ import { PageNotFoundComponent } from './components/technical-department/page-no
 import { SpecialistPageComponent } from './components/search-block/specialist-page/specialist-page.component';
 import { CalendarComponent } from './components/search-block/specialist-page//calendar/calendar.component';
 import { ArticleComponent } from './components/search-block/specialist-page/article/article.component';
-import { ReviewsComponent } from './components/search-block/specialist-page/reviews/reviews.component';
+import { ReviewComponent } from './components/search-block/specialist-page/review/review.component';
 import { NeedHelpComponent } from './components/main-content/need-help/need-help.component';
 
 @NgModule({
@@ -47,7 +47,7 @@ import { NeedHelpComponent } from './components/main-content/need-help/need-help
     SpecialistPageComponent,
     CalendarComponent,
     ArticleComponent,
-    ReviewsComponent,
+    ReviewComponent,
     NeedHelpComponent,
   ],
   imports: [

@@ -1,4 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  Renderer2,
+  Inject,
+} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -6,31 +13,22 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
   @ViewChild('nav', { static: true }) nav!: ElementRef;
   @ViewChild('loginBtn', { static: true }) loginBtn!: ElementRef;
 
-  isMobileNavOpen = false;
+  isMobileNavOpen: boolean = false;
 
-  screenWidth: any;
-
-  openMobileNav() {
+  mobileNav() {
     this.isMobileNavOpen = !this.isMobileNavOpen;
-
-    if (!this.isMobileNavOpen) {
-      this.nav.nativeElement.style.display = 'none';
-      this.loginBtn.nativeElement.style.display = 'none';
-      console.log('open');
+    if (this.isMobileNavOpen) {
+      this.renderer.setStyle(this.document.body, 'overflow', 'hidden');
     } else {
-      this.nav.nativeElement.style.display = 'flex';
-      this.loginBtn.nativeElement.style.display = 'block';
+      this.renderer.setStyle(this.document.body, 'overflow', 'visible');
     }
-  }
-
-  closeMobileNav() {
-    this.isMobileNavOpen = !this.isMobileNavOpen;
-
-    this.nav.nativeElement.style.display = 'none';
-    this.loginBtn.nativeElement.style.display = 'none';
-    console.log('close');
   }
 }

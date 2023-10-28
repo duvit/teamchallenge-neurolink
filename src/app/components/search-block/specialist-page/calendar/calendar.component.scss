@@ -1,0 +1,18 @@
+@import "../../../../../styles.scss";
+
+.calendar {
+  margin: auto;
+  width: 272px;
+  height: 345px;
+  background-image: url(../../../../../assets/calendar_mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include desktop {
+    width: 1005px;
+    height: 600px;
+    background-image: url(../../../../../assets/calendar_desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

@@ -24,15 +24,14 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    console.log('load');
-    this.usersListSubscription = this.getSpecialists().subscribe(
-      (response: Specialist[]) => {
-        this.specialistsList = response;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    //  this.usersListSubscription = this.getSpecialists().subscribe(
+    //   (response: Specialist[]) => {
+    //     this.specialistsList = response;
+    //   },
+    //   (error) => {
+    //     console.error(error);
+    //   }
+    // );
   }
 
   loginUser() {
@@ -55,7 +54,7 @@ export class UserService {
   }
 
   getSpecialistById(id: number): Specialist {
-    return this.specialistsList.find((specialist) => specialist.id === id)!;
+    return this.specialistsMockList.find((specialist) => specialist.id === id)!;
   }
 
   getFilteredItems(filterParams: any): Observable<Specialist[]> {

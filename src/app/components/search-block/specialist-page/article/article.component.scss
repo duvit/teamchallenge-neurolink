@@ -1,0 +1,91 @@
+@import "../../../../../styles.scss";
+
+.wrapper {
+  @include desktop {
+    display: flex;
+    margin: 40px 0 0;
+  }
+
+  .article-container {
+    width: 272px;
+    height: 440px;
+    margin: 20px auto 0;
+
+    border-radius: 10px;
+    background-color: #fff;
+
+    @include desktop {
+      width: 320px;
+      height: 462px;
+    }
+
+    .article-img {
+      width: 272px;
+      height: 208px;
+
+      @include desktop {
+        width: 320px;
+        height: 208px;
+      }
+    }
+
+    .article {
+      padding: 10px;
+
+      @include desktop {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      &-title {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-descr {
+        margin-top: 20px;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      &-author {
+        margin-top: 20px;
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 400;
+
+        &-strong {
+          color: #4f3a7a;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      &-meta {
+        display: flex;
+        justify-content: space-between;
+
+        &__date {
+          color: $main-text-color;
+          font-size: 12px;
+          font-weight: 400;
+        }
+
+        &__read-more {
+          color: #4f3a7a;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+}
