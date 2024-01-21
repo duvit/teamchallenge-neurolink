@@ -7,54 +7,63 @@
 
   <form
     class="registration__form"
-    [formGroup]="registrationForm"
+    [formGroup]="form"
     (ngSubmit)="onSubmit()"
   >
     <div class="form-wrapper">
-
-      <div class="form-column">
-        <div class="registration__form-group">
-          <label for="email">E-mail / Телефон*</label>
-          <input type="text" id="email" formControlName="email" />
-        </div>
-
-        <div class="registration__form-group">
-          <label for="username">Ім'я*</label>
-          <input type="text" id="username" formControlName="username" />
-        </div>
-
-        <div class="registration__form-group">
-          <label for="userSurname">Прізвище</label>
-          <input type="text" id="userSurname" formControlName="userSurname" />
-        </div>
+      <!-- <div class="form-column"> -->
+      <div class="registration__form-group">
+        <label for="email">E-mail / Телефон*</label>
+        <input type="text" id="email" formControlName="email" />
       </div>
 
-      <div class="form-column">
-        <div class="registration__form-group">
+      <div class="registration__form-group">
+        <label for="firstName">Ім'я*</label>
+        <input type="text" id="firstName" formControlName="firstName" />
+      </div>
+
+      <div class="registration__form-group">
+        <label for="lastName">Прізвище</label>
+        <input type="text" id="lastName" formControlName="lastName" />
+      </div>
+      <!-- </div> -->
+
+      <!-- <div class="form-column"> -->
+      <!-- <div class="registration__form-group">
           <label for="userBirthDate">Дата народження</label>
           <input
             type="date"
             id="userBirthDate"
             formControlName="userBirthDate"
           />
-        </div>
+        </div> -->
 
-        <div class="registration__form-group">
-          <label for="password">Пароль</label>
-          <input type="password" id="password" formControlName="password" />
-        </div>
+      <div class="registration__form-group">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
 
-        <div class="registration__form-group">
+      <div class="registration__form-group">
+        <label for="roles">roles</label>
+        <input type="roles" id="roles" formControlName="roles" />
+      </div>
+
+      <div class="registration__form-group">
+        <label for="location">location</label>
+        <input type="location" id="location" formControlName="location" />
+      </div>
+
+      <!-- <div class="registration__form-group">
           <label for="passwordRepeat">Повторити пароль</label>
           <input
             type="password"
             id="passwordRepeat"
             formControlName="passwordRepeat"
           />
-        </div>
-      </div>
-      
+        </div> -->
     </div>
+
+    <!-- </div> -->
 
     <div class="user-agreement">
       <input class="user-agreement-check" type="checkbox" id="agreement" />

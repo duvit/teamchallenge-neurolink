@@ -1,11 +1,7 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  Renderer2,
-  Inject,
-} from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild, Inject } from '@angular/core';
+
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,10 +9,16 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  authService = Inject(AuthService);
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<UserInterface>().subscribe(response) => {
+      console.log('response', response); 
+      this.authService.currentUserSig.set(response)
+    }
+  }
 
   @ViewChild('nav', { static: true }) nav!: ElementRef;
   @ViewChild('loginBtn', { static: true }) loginBtn!: ElementRef;
@@ -25,10 +27,9 @@ export class HeaderComponent {
 
   mobileNav() {
     this.isMobileNavOpen = !this.isMobileNavOpen;
-    if (this.isMobileNavOpen) {
-      this.renderer.setStyle(this.document.body, 'overflow', 'hidden');
-    } else {
-      this.renderer.setStyle(this.document.body, 'overflow', 'visible');
-    }
+  }
+
+  closeMobileNav() {
+    this.isMobileNavOpen = false;
   }
 }

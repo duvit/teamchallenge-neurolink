@@ -1,18 +1,19 @@
 export interface Specialist {
   id: number;
-  name: string;
-  surName: string;
   email: string;
-  password: string;
-  phone: string;
-  price: number;
+  firstName: string;
+  lastName: string;
   location: string;
-  online: boolean;
-  offline: boolean;
-  experience: number;
-  rating: number;
-  description: string;
-  categories: string[];
-  areas: string[];
   photoLink: string;
+  card: {
+    id: number;
+    price: number;
+    rating: number;
+    experience: number;
+    specialization: boolean;
+    description: string;
+    photoLink: string;
+    categories: string[];
+  };
+  role: ['USER', 'PSYCHOLOGIST'];
 }

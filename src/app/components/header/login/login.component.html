@@ -5,7 +5,7 @@
     <a routerLink="/registration">Зареєструватися</a>
   </h5>
 
-  <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="login__group__email">
       <label for="email">E-mail / Телефон*</label>
       <input

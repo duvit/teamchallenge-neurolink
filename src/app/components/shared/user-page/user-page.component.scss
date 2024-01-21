@@ -1,0 +1,61 @@
+@import "src/styles.scss";
+
+.wrapper {
+  @include desktop {
+    margin: 40px 80px;
+    display: flex;
+  }
+
+  .sidebar {
+    @include desktop {
+      width: 265px;
+      height: 600px;
+      border-radius: 10px;
+      background-color: $primary-color;
+    }
+
+    &-menu {
+      @include desktop {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__item {
+        margin-top: 20px;
+
+        list-style-type: none;
+
+        .sidebar-menu__item-link {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+        &-icon {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+        }
+
+        &-title {
+          margin-left: 20px;
+          display: inline-block;
+
+          color: var(--Light-purple, #f1f0f5);
+
+          /* H3 Small text */
+          font-family: Roboto;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      &__item:last-child {
+        margin-top: 246px;
+        align-self: center;
+      }
+    }
+  }
+}

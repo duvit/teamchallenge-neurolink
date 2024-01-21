@@ -2,10 +2,11 @@
 
 .specialist-card {
   width: 272px;
+
   height: 292px;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
   padding: 10px;
-  box-sizing: content-box;
+  box-sizing: border-box;
   border-radius: 10px;
 
   background: #fff;
@@ -14,7 +15,7 @@
     box-sizing: border-box;
     @include adaptive-value("padding", 20, 10);
 
-    @include adaptive-value("width", 360, 272);
+    @include adaptive-value("width", 360, 160);
     @include adaptive-value("height", 402, 322);
   }
 
@@ -27,11 +28,11 @@
     .specialist-card__photo {
       border-radius: 10px;
       width: 122px;
-      height: 152px;
+      height: auto;
 
       @include desktop {
         @include adaptive-value("width", 150, 122);
-        @include adaptive-value("height", 200, 152);
+        height: auto;
       }
     }
 
@@ -112,6 +113,7 @@
 
     @include desktop {
       @include adaptive-value("font-size", 16, 14);
+      overflow-wrap: break-word;
     }
   }
 

@@ -6,8 +6,8 @@
   background-color: #fff;
 
   @include desktop {
-    width: 930px;
-    height: 475px;
+    width: 600px;
+    height: 668px;
     margin: 120px auto 0;
 
     box-sizing: border-box;
@@ -54,11 +54,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     .form-wrapper {
       @include desktop {
         margin: 20px 20px 0;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
       }
     }
@@ -83,6 +85,7 @@
   }
 
   .user-agreement {
+    width: 360px;
     display: flex;
     height: 24px;
     align-items: center;
@@ -97,8 +100,9 @@
     }
 
     .user-agreement-label {
-      margin-left: 12px;
+      display: inline-block;
       width: 100%;
+      margin-left: 12px;
       color: #343241;
       font-family: $font;
       font-size: 12px;
@@ -116,7 +120,7 @@
         text-decoration-line: underline;
 
         @include desktop {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 500;
         }
       }

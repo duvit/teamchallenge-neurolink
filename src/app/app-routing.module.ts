@@ -5,19 +5,23 @@ import { RegistrationComponent } from './components/header/registration/registra
 import { LoginComponent } from './components/header/login/login.component';
 import { UserAgreementComponent } from './components/technical-department/user-agreement/user-agreement.component';
 import { PageNotFoundComponent } from './components/technical-department/page-not-found/page-not-found.component';
-import { SpecialistPageComponent } from './components/search-block/specialist-page/specialist-page.component';
+import { SpecialistPageComponent } from './components/shared/specialist-page/specialist-page.component';
+import { UserPageComponent } from './components/shared/user-page/user-page.component';
 
 const routes: Routes = [
   { path: '', component: MainContentWrapperComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'specialist-page/:id', component: SpecialistPageComponent },
+  { path: 'user', component: UserPageComponent },
   { path: 'user-agreement', component: UserAgreementComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

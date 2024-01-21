@@ -1,7 +1,7 @@
 <div class="search-block">
   <h4 class="search-block__title">Наші спеціалісти</h4>
   <!-- <app-search-bar></app-search-bar> -->
-  <input type="checkbox" (change)="toggleCategory('PSYCHOTHERAPIST')" />
+  <!-- <input type="checkbox" (change)="toggleCategory('PSYCHOTHERAPIST')" />
   Психотерапевт
   <input type="checkbox" (change)="toggleCategory('CHILD_PSYCHOLOGIST')" />
   Child Psychologist
@@ -10,12 +10,12 @@
   <input type="checkbox" (change)="toggleCity('KYIV')" />
   Київ
   <input type="checkbox" (change)="toggleCity('LVIV')" />
-  Львів
+  Львів -->
 
   <div class="cards-container">
     <app-specialist-card
       class="app-specialist-card"
-      *ngFor="let specialist of specialistsList"
+      *ngFor="let specialist of specialistsList | async"
       [specialist]="specialist"
     ></app-specialist-card>
   </div>

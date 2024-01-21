@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
-import { UserService } from 'src/app/services/user.service';
+import { HttpClient } from '@angular/common/http';
+import { UserInterface } from 'src/app/shared/interfaces/user.interface';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,47 +12,34 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-
   constructor(
     private fb: FormBuilder,
-    private userSerivce: UserService,
-    private http: HttpClient
-  ) {
-    this.loginForm = this.fb.group({
-      email: [''],
-      password: [''],
-    });
-  }
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  form = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+  });
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      const formData = this.loginForm.value;
-
-      const params = new HttpParams()
-        .set('email', formData.email)
-        .set('password', formData.password);
-
-      // Встановіть заголовки для POST-запиту
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      });
-
-      // Виконайте POST-запит з використанням HttpClient
-      this.http
-        .post('http://134.249.52.201:8080/login', params.toString(), {
-          headers,
-        })
-        .subscribe(
-          (response) => {
-            console.log('Success', response);
-            // Результат успішного POST-запиту тут
-          },
-          (error) => {
-            console.error('Error', error);
-            // Обробка помилки POST-запиту тут
-          }
-        );
-    }
+    this.http
+      .post<UserInterface>(
+        'https://mindelink.onrender.com/auth/signin',
+        this.form.getRawValue()
+      )
+      .subscribe(
+        (response) => {
+          console.log('Success', response);
+          localStorage.setItem('token', response.token);
+          this.authService.currentUserSig.set(response);
+          this.router.navigateByUrl('/');
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      );
   }
 }

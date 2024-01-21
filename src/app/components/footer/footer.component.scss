@@ -62,7 +62,7 @@
         text-align: center;
 
         @include desktop {
-          @include adaptive-value("font-size", 20, 12);
+          @include adaptive-value("font-size", 16, 12);
         }
       }
 

@@ -5,11 +5,13 @@
 
   z-index: 1;
   margin: 0 0 0 24px;
-
+  // overflow: hidden;
+  
   @include desktop {
     position: relative;
     z-index: 1;
     @include adaptive-value("margin-left", 80, 20);
+
     // @include adaptive-value("margin-right", 80, 20);
   }
 
