@@ -26,6 +26,9 @@ import { ReviewComponent } from './components/shared/specialist-page/review/revi
 import { NeedHelpComponent } from './components/main-content/need-help/need-help.component';
 import { SpecialistCardComponent } from './components/shared/specialist-card/specialist-card.component';
 import { UserPageComponent } from './components/shared/user-page/user-page.component';
+import { ProfileComponent } from './components/shared/user-page/profile/profile.component';
+import { SupportComponent } from './components/shared/user-page/support/support.component';
+import { SettingsComponent } from './components/shared/user-page/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { UserPageComponent } from './components/shared/user-page/user-page.compo
     ReviewComponent,
     NeedHelpComponent,
     UserPageComponent,
+    ProfileComponent,
+    SupportComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

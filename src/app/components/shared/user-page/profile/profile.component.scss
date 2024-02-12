@@ -1,0 +1,121 @@
+@import "src/styles.scss";
+
+.user {
+  
+  &-profile {
+    display: flex;
+  }
+
+  &-info {
+    @include desktop {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      width: 455px;
+      height: 174px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    &__photo {
+      @include desktop {
+        width: 124px;
+        height: 124px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1.5px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      &__img {
+        @include desktop {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* Забезпечує, щоб зображення повністю вміщувалося в кадр */
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &__user-data {
+      @include desktop {
+        margin-left: 48px;
+      }
+
+      .user-data-name {
+        @include desktop {
+          display: flex;
+          align-items: center;
+        }
+
+        @include desktop {
+          &__text {
+            @include h2-desktop;
+            margin-left: 20px;
+          }
+        }
+      }
+
+      .user-data-email {
+        @include desktop {
+          display: flex;
+          align-items: center;
+        }
+
+        @include desktop {
+          &__text {
+            @include h3-small-text;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &-calendar {
+    @include desktop {
+      height: 174px;
+      width: 360px;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-dashboard {
+    @include desktop {
+      margin-top: 40px;
+      display: flex;
+      gap: 46px;
+    }
+
+    &__item {
+      @include desktop {
+        @include h3-small-text;
+
+        height: 90px;
+        width: 192px;
+        border-radius: 20px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .create-psychologist-profile {
+    @include main-button;
+
+    margin-top: 40px;
+  }
+}

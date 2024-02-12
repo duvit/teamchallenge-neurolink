@@ -1,0 +1,49 @@
+@import "src/styles.scss";
+
+.wrapper {
+  @include desktop {
+    width: 1024px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    height: 200px;
+    width: 600px;
+    // margin-top: 160px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    text-align: center;
+
+    .title {
+      @include h2-second-text;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+
+      &__item {
+        display: flex;
+
+        justify-content: center;
+
+        width: 100%;
+
+        list-style-type: none;
+
+        &-title {
+          @include h3-small-text;
+          
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

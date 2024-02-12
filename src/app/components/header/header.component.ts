@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, ViewChild, Inject } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,16 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  authService = Inject(AuthService);
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.http.get<UserInterface>().subscribe(response) => {
-      console.log('response', response); 
-      this.authService.currentUserSig.set(response)
-    }
-  }
+  constructor(public authService: AuthService) {}
 
   @ViewChild('nav', { static: true }) nav!: ElementRef;
   @ViewChild('loginBtn', { static: true }) loginBtn!: ElementRef;
@@ -31,5 +21,9 @@ export class HeaderComponent {
 
   closeMobileNav() {
     this.isMobileNavOpen = false;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

@@ -42,7 +42,7 @@ export class RegistrationComponent {
         (response) => {
           console.log('Success', response);
           localStorage.setItem('token', response.token);
-          this.authService.currentUserSig.set(response);
+          // this.authService.login();
           this.router.navigateByUrl('/');
         },
         (error) => {

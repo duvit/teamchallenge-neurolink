@@ -1,0 +1,113 @@
+@import "../../../../../styles.scss";
+
+.container {
+  width: 775px;
+  height: 601px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  display: flex;
+  padding: 0 56px;
+
+  .photo {
+    @include desktop {
+      width: 124px;
+      height: 124px;
+      margin-top: 25px;
+      // overflow: hidden;
+      border-radius: 50%;
+      border: 1.5px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &__img {
+      @include desktop {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Забезпечує, щоб зображення повністю вміщувалося в кадр */
+        border-radius: 50%;
+      }
+    }
+
+    .change-photo {
+      display: block;
+      margin: 20px auto;
+
+      //styleName: Link text;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      background-color: transparent;
+      border: none;
+      color: #343241;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .form {
+    margin-left: 58px;
+    .registration__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .form-wrapper {
+        @include desktop {
+          margin: 20px 20px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+
+      label {
+        color: $main-text-color;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      input {
+        @include account-input-field;
+        margin: 2px 0 8px 0;
+
+        @include desktop {
+          width: 360px;
+        }
+      }
+
+      .user-agreement {
+        width: 360px;
+        display: flex;
+        height: 24px;
+        align-items: center;
+        margin: 20px auto 0;
+
+        .user-agreement-check {
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          border: 1px solid #8c8c94;
+          margin: 0;
+        }
+      }
+
+      .registration__form-btn {
+        @include main-button;
+        width: 180px;
+        margin: 12px auto;
+
+        @include desktop {
+          width: 180px;
+          margin: 36px auto;
+        }
+      }
+    }
+  }
+}

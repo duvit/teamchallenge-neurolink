@@ -90,7 +90,7 @@
     </nav>
   </div>
 
-  <div class="login" *ngIf="authService.currentUserSig() === null">
+  <div class="login" *ngIf="!(authService.isAuthenticated$ | async)">
     <a routerLink="/login" (click)="mobileNav()">
       <button
         class="login-btn"
@@ -129,8 +129,7 @@
     </a>
   </div>
 
-  <div class="login" *ngIf="authService.currentUserSig()">
-    <p>{{ authService.currentUserSig()?.username }}</p>
+  <div class="login" *ngIf="authService.isAuthenticated$ | async">
     <a>
       <button class="login-btn" type="button">
         <svg
@@ -155,13 +154,13 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Мій профіль</span>
+        <span routerLink="/user-page">Мій профіль</span>
       </button>
     </a>
 
     <a>
       <button class="login-btn" type="button">
-        <span>Вихід</span>
+        <span (click)="logout()">Вихід</span>
         <svg
           width="24"
           height="24"

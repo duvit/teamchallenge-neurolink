@@ -64,7 +64,7 @@
       }
 
       .how-it-works-item__title {
-        @include secondary-title;
+        @include h2-second-text;
 
         margin: 0 auto 0;
         font-size: 16px;

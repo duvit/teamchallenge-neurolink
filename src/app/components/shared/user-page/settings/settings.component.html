@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="photo">
+      <img class="photo__img" src="../assets/user-photo.png" alt="" />
+      <button class="change-photo">Змінити фото</button>
+    </div>
+    <div class="form">
+      <!-- [formGroup]="form"
+      (ngSubmit)="onSubmit()" -->
+      <form class="registration__form">
+        <div class="form-wrapper">
+          <!-- <div class="form-column"> -->
+          <div class="registration__form-group">
+            <label for="email">E-mail / Телефон*</label>
+            <input type="text" id="email" formControlName="email" />
+          </div>
+
+          <div class="registration__form-group">
+            <label for="firstName">Ім'я*</label>
+            <input type="text" id="firstName" formControlName="firstName" />
+          </div>
+
+          <div class="registration__form-group">
+            <label for="lastName">Прізвище</label>
+            <input type="text" id="lastName" formControlName="lastName" />
+          </div>
+
+          <div class="registration__form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" formControlName="password" />
+          </div>
+
+          <div class="registration__form-group">
+            <label for="passwordRepeat">Повторити пароль</label>
+            <input
+              type="password"
+              id="passwordRepeat"
+              formControlName="passwordRepeat"
+            />
+          </div>
+
+          <div class="registration__form-group">
+            <label for="city">Місто</label>
+            <input type="text" id="city" formControlName="city" />
+          </div>
+        </div>
+
+        <!-- </div> -->
+
+        <button class="registration__form-btn" type="submit">Зберегти</button>
+      </form>
+    </div>
+  </div>
+</div>

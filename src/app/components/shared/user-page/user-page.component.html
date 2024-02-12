@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <menu class="sidebar-menu">
       <li class="sidebar-menu__item">
-        <a href="" class="sidebar-menu__item-link"
+        <a routerLink="profile" class="sidebar-menu__item-link"
           ><span class="sidebar-menu__item-icon"
             ><svg
               width="24"
@@ -30,7 +30,7 @@
         >
       </li>
       <li class="sidebar-menu__item">
-        <a href="" class="sidebar-menu__item-link">
+        <a routerLink="support" class="sidebar-menu__item-link">
           <span class="sidebar-menu__item-icon"
             ><svg
               width="24"
@@ -58,7 +58,7 @@
         >
       </li>
       <li class="sidebar-menu__item">
-        <a href="" class="sidebar-menu__item-link">
+        <a routerLink="settings" class="sidebar-menu__item-link">
           <span class="sidebar-menu__item-icon"
             ><svg
               width="24"
@@ -129,50 +129,7 @@
     </menu>
   </aside>
 
-  <div class="user-page">
-    <div class="user-profile">
-      <div class="user-info">
-        <div class="user-info__photo"></div>
-        <div class="user-info__user-data">
-          <div class="user-data-name">
-            <span class="user-data-name__icon"></span>
-            <span class="user-data-name__text">Анна</span>
-          </div>
-          <div class="user-data-email">
-            <span class="user-data-email__icon"></span>
-            <span class="user-data-email__text">Hanna22gmail.com</span>
-          </div>
-          <div class="user-data-rating"></div>
-        </div>
-      </div>
-      <div class="user-calendar"></div>
-    </div>
-
-    <div class="user-dashboard">
-      <div class="user-dashboard__psychologists">
-        <a href="">
-          <span class="user-dashboard__psychologists-title">Психологи</span>
-          <span class="user-dashboard__psychologists-img"></span>
-        </a>
-      </div>
-      <div class="user-dashboard__sessions">
-        <a href="">
-          <span class="user-dashboard__sessions-title">Мої сеанси</span>
-          <span class="user-dashboard__sessions-img"></span>
-        </a>
-      </div>
-      <div class="user-dashboard__find-psychologist">
-        <a href="">
-          <span class="user-dashboard__find-psychologist-title"
-            >Підібрати психолога</span
-          >
-          <span class="user-dashboard__find-psychologist-img"></span>
-        </a>
-      </div>
-    </div>
-
-    <button class="create-psychologist-profile">
-      Заповнити профіль як психолог
-    </button>
+  <div class="outlet">
+    <router-outlet></router-outlet>
   </div>
 </div>

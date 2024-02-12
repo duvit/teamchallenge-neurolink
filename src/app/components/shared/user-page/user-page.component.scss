@@ -2,7 +2,8 @@
 
 .wrapper {
   @include desktop {
-    margin: 40px 80px;
+    margin: 40px auto 0;
+    width: 1120px;
     display: flex;
   }
 
@@ -57,5 +58,9 @@
         align-self: center;
       }
     }
+  }
+
+  .outlet {
+    margin-left: 20px;
   }
 }
