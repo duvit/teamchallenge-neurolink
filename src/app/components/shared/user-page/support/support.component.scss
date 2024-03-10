@@ -6,42 +6,64 @@
     height: 600px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
   }
 
   .container {
-    height: 200px;
-    width: 600px;
-    // margin-top: 160px;
+    height: 192px;
+    width: 272px;
+    margin-top: 40px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
 
     text-align: center;
 
+    @include desktop {
+      height: 200px;
+      width: 600px;
+      margin-top: 160px;
+    }
+
     .title {
-      @include h2-second-text;
+      @include h1-main-text-mobile;
+
+      @include desktop {
+        @include h2-second-text;
+      }
+
     }
 
     .contact-list {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 0;
       gap: 22px;
+
 
       &__item {
         display: flex;
-
         justify-content: center;
-
+        align-items: center;
         width: 100%;
-
         list-style-type: none;
 
+        &-icon {
+          height: 24px;
+        }
+
         &-title {
-          @include h3-small-text;
-          
+          @include h2-second-text-mobile;
+
           margin-left: 20px;
+
+          @include desktop {
+            @include h3-small-text;
+
+            margin-left: 20px;
+          }
+
         }
       }
     }

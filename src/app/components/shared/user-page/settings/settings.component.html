@@ -1,10 +1,12 @@
 <div class="wrapper">
   <div class="container">
-    <div class="photo">
-      <img class="photo__img" src="../assets/user-photo.png" alt="" />
+    <div class="photo-container">
+      <div class="photo">
+        <img class="photo__img" src="../assets/user-photo.png" alt="" />
+      </div>
       <button class="change-photo">Змінити фото</button>
     </div>
-    <div class="form">
+    <div *ngIf="role === 'user'" class="settings">
       <!-- [formGroup]="form"
       (ngSubmit)="onSubmit()" -->
       <form class="registration__form">
@@ -49,6 +51,153 @@
 
         <button class="registration__form-btn" type="submit">Зберегти</button>
       </form>
+    </div>
+
+    <div *ngIf="role === 'spec'" class="settings">
+      <div class="drop-down-item" (click)="expandOrCollapseRow(0)">
+        <div
+          [ngClass]="{ myRowStyle: true, expanded: isExpanded(0) }"
+          class="settings__header"
+        >
+          <h3 class="settings__header-text">Основні налаштування</h3>
+          <div>
+            <svg
+              class="settings__header-icon"
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L7 7L13 1"
+                stroke="#4F3A7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+        <div *ngIf="isExpanded(0)" class="settings__body">
+          <form class="registration__form" (click)="$event.stopPropagation()">
+            <div class="form-wrapper">
+              <!-- <div class="form-column"> -->
+              <div class="registration__form-group">
+                <label for="email">E-mail / Телефон*</label>
+                <input type="text" id="email" formControlName="email" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="firstName">Ім'я*</label>
+                <input type="text" id="firstName" formControlName="firstName" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="lastName">Прізвище</label>
+                <input type="text" id="lastName" formControlName="lastName" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="password">Пароль</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="passwordRepeat">Повторити пароль</label>
+                <input
+                  type="password"
+                  id="passwordRepeat"
+                  formControlName="passwordRepeat"
+                />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="city">Місто</label>
+                <input type="text" id="city" formControlName="city" />
+              </div>
+            </div>
+
+            <!-- </div> -->
+
+            <button class="registration__form-btn" type="submit">
+              Зберегти
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div (click)="expandOrCollapseRow(1)">
+        <div
+          [ngClass]="{ myRowStyle: true, expanded: isExpanded(1) }"
+          class="settings__header"
+        >
+          <h3 class="settings__header-text">Налаштувати профіль психолога</h3>
+          <div class="settings__header-icon">
+            <svg
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L7 7L13 1"
+                stroke="#4F3A7A"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+        <div *ngIf="isExpanded(1)" class="settings__body">
+          <form class="registration__form" (click)="$event.stopPropagation()">
+            <div class="form-wrapper">
+              <!-- <div class="form-column"> -->
+              <div class="registration__form-group">
+                <label for="email">Початок професійної діяльності</label>
+                <input type="text" id="email" formControlName="email" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="firstName">Ціна за годину</label>
+                <input type="text" id="firstName" formControlName="firstName" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="lastName">Cпеціалізація</label>
+                <input type="text" id="lastName" formControlName="lastName" />
+              </div>
+
+              <div class="registration__form-group">
+                <label for="password">Напрямки роботи</label>
+
+                <select class="form-control" id="allocation-algorithm">
+                  <option value="SHA-256">SHA-256</option>
+                  <option value="SCRYPT">SCRYPT</option>
+                </select>
+              </div>
+
+              <div class="registration__form-group about-field">
+                <label for="city" class="about-field-label">Про себе</label>
+                <!-- <span>icon-svg</span> -->
+                <input type="text" id="city" formControlName="city" class="about-field-input"/>
+              </div>
+            </div>
+
+            <!-- </div> -->
+
+            <button class="registration__form-btn" type="submit">
+              Зберегти
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

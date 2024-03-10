@@ -4,9 +4,7 @@
 
   $addSize: $startSize - $minSize;
 
-  #{$property}: calc(
-    #{$minSize + px} + #{$addSize} * ((100vw - 480px) / #{$maxWidth - 480})
-  );
+  #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 480px) / #{$maxWidth - 480}));
 }
 
 @mixin h2-desktop {
@@ -25,6 +23,32 @@
   letter-spacing: 0em;
   text-align: left;
 }
+
+@mixin h1-main-text-mobile {
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+}
+
+@mixin h2-second-text-mobile {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+}
+
+@mixin h3-small-text-mobile {
+  font-family: $font;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+}
+
+
 
 @mixin main-button {
   color: $secondary-color;

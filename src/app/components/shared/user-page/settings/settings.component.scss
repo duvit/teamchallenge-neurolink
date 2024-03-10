@@ -1,39 +1,56 @@
 @import "../../../../../styles.scss";
 
 .container {
-  width: 775px;
-  height: 601px;
+  width: 272px;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px;
+
+  flex-direction: column;
+  align-items: flex-start;
   border-radius: 10px;
   background-color: #fff;
 
-  display: flex;
-  padding: 0 56px;
+  @include desktop {
+    width: 775px;
+    height: 875px;
+    flex-direction: row;
+    padding: 0 60px;
+  }
 
-  .photo {
+  .photo-container {
+    width: 100%;
+
     @include desktop {
-      width: 124px;
-      height: 124px;
-      margin-top: 25px;
-      // overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .photo {
+      width: 64px;
+      height: 64px;
+      margin: 6px auto 0;
       border-radius: 50%;
       border: 1.5px solid #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
 
-    &__img {
       @include desktop {
+        width: 124px;
+        height: 124px;
+      }
+
+      &__img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Забезпечує, щоб зображення повністю вміщувалося в кадр */
+        object-fit: cover;
         border-radius: 50%;
       }
     }
 
     .change-photo {
       display: block;
-      margin: 20px auto;
-
-      //styleName: Link text;
+      width: 120px;
+      margin: 12px auto 0;
       font-family: Roboto;
       font-size: 14px;
       font-weight: 500;
@@ -44,16 +61,67 @@
       color: #343241;
       text-decoration: underline;
       cursor: pointer;
+
+      @include desktop {
+        margin: 20px auto;
+      }
     }
   }
 
-  .form {
-    margin-left: 58px;
+  .settings {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include desktop {
+      margin-left: 58px;
+      min-width: 420px;
+      min-height: 1020px;
+    }
+
+    .drop-down-item {
+      margin-top: 30px;
+    }
+
+    &__header {
+      width: 380px;
+      height: 63px;
+      border-radius: 8px;
+      border: 1px solid #8c8c94;
+      padding: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        @include h3-small-text;
+
+        margin: 0;
+      }
+    }
+
+    .expanded {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
+
+    .settings__header.expanded .settings__header-icon {
+      transform: rotate(180deg); /* Обертання на 180 градусів */
+    }
+
+    .settings__header.expanded .settings__header-icon path {
+      stroke: #ffffff; /* Змінюємо колір обводки на білий */
+    }
+
     .registration__form {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 380px;
 
       .form-wrapper {
         @include desktop {
@@ -76,26 +144,44 @@
       input {
         @include account-input-field;
         margin: 2px 0 8px 0;
+        width: 242px;
 
         @include desktop {
           width: 360px;
         }
       }
 
-      .user-agreement {
-        width: 360px;
-        display: flex;
-        height: 24px;
-        align-items: center;
-        margin: 20px auto 0;
+      select {
+        @include account-input-field;
+        margin: 2px 0 8px 0;
+        width: 242px;
 
-        .user-agreement-check {
-          width: 24px;
-          height: 24px;
-          border-radius: 4px;
-          border: 1px solid #8c8c94;
-          margin: 0;
+        @include desktop {
+          width: 360px;
         }
+      }
+
+      .about-field {
+        width: 361px;
+        height: 215px;
+        margin-top: 22px;
+        padding: 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background-color: $primary-color;
+      }
+
+      .about-field-label {
+        @include h1-main-text-mobile;
+
+        color: $secondary-color;
+      }
+
+      .about-field-input {
+        width: 321px;
+        height: 136px;
+        margin-top: 20px;
+        border-radius: 10px;
       }
 
       .registration__form-btn {
@@ -105,9 +191,18 @@
 
         @include desktop {
           width: 180px;
-          margin: 36px auto;
+          margin: 22px auto;
         }
       }
     }
   }
+}
+
+// .myRowStyle:nth-child(even) {
+//   background-color: #ebebeb;
+// }
+
+.myRowStyle:hover {
+  background-color: $primary-color;
+  opacity: 0.9;
 }

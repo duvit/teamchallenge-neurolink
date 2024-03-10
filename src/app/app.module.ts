@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -29,6 +28,7 @@ import { UserPageComponent } from './components/shared/user-page/user-page.compo
 import { ProfileComponent } from './components/shared/user-page/profile/profile.component';
 import { SupportComponent } from './components/shared/user-page/support/support.component';
 import { SettingsComponent } from './components/shared/user-page/settings/settings.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -56,13 +56,14 @@ import { SettingsComponent } from './components/shared/user-page/settings/settin
     UserPageComponent,
     ProfileComponent,
     SupportComponent,
-    SettingsComponent,
+    // SettingsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
