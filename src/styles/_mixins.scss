@@ -42,13 +42,19 @@
 
 @mixin h3-small-text-mobile {
   font-family: $font;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0em;
 }
 
-
+@mixin h4-small-text-mobile {
+  font-family: $font;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+}
 
 @mixin main-button {
   color: $secondary-color;
